@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Training Brain-Scale Neural Networks on Marlowe | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" class="active">Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" >Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/marlowe-staging/">Overview</a>
+        <span class="sep">/</span>
+        <a href="/marlowe-staging/research/">Research Focus</a>
+        <span class="sep">/</span>
+        <span class="current">Dan Yamins</span>
+      </nav>
+
+      <article class="research-article">
+        <h1 id="training-brain-scale-neural-networks-on-marlowe">Training Brain-Scale Neural Networks on Marlowe</h1>
+
+<div class="article-meta">
+<strong>PI:</strong> Dan Yamins, Associate Professor of Psychology and Computer Science<br />
+<strong>Lab:</strong> <a href="https://neuroailab.stanford.edu/">NeuroAILab</a><br />
+Member, <a href="https://biox.stanford.edu/">Bio-X</a> · Faculty Affiliate, <a href="https://hai.stanford.edu/">HAI</a> · Member, <a href="https://neuroscience.stanford.edu/">Wu Tsai Neurosciences Institute</a>
+</div>
+
+<h2 id="the-science">The Science</h2>
+
+<p>How does the brain give rise to cognition? Dan Yamins’ lab is attacking this question by training an 80-billion-parameter neural network inspired by the architecture of biological brains. The model, called a Counterfactual World Model, learns to predict how the physical world changes in response to actions, a capacity that neuroscientists believe is fundamental to biological intelligence.</p>
+
+<p>“The brain doesn’t just passively observe the world,” Yamins explains. “It builds internal models that predict what will happen next, and those predictions are what let us plan, imagine, and reason.”</p>
+
+<p>Training a model of this scale demands computational resources that go far beyond what a typical university lab can access. The 80B-parameter architecture requires coordinated training across hundreds of GPUs communicating at high bandwidth. This is exactly the kind of capability-scale workload that Marlowe was built for.</p>
+
+<h2 id="the-hero-run">The Hero Run</h2>
+
+<p>On February 7, 2026, Yamins’ team completed a proof-of-concept hero run on Marlowe: 24 nodes (192 H100 GPUs) running for 24 hours, achieving 45% model FLOPS utilization (MFU). This validated that the massive model can train efficiently at scale on Marlowe’s architecture and set the stage for a proposed 30-day dedicated training campaign that would produce a landmark result in computational neuroscience.</p>
+
+<p>The hero run used internet-scale video data as training input, the same kind of rich, dynamic visual experience that biological brains learn from during development.</p>
+
+<h2 id="why-marlowe">Why Marlowe</h2>
+
+<p>This research simply cannot happen on conventional computing clusters. Single-node GPU jobs are orders of magnitude too small. Cloud computing at this scale would cost tens of thousands of dollars per run. Marlowe provides the combination of massive GPU count, high-bandwidth interconnect (InfiniBand), and dedicated scheduling that makes capability-scale neuroscience training possible at a university.</p>
+
+<p>At $0.25 per GPU-hour, Yamins’ team can pursue ambitious experiments that would be financially prohibitive on commercial cloud platforms, enabling the kind of high-risk, high-reward research that universities are uniquely positioned to support.</p>
+
+<h2 id="whats-next">What’s Next</h2>
+
+<p>The team is preparing for a 30-day dedicated training campaign using 24 nodes, which would produce a fully trained 80B-parameter brain model, a first-of-its-kind result that bridges computational neuroscience and frontier AI research.</p>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>Marlowe is Stanford's 248-GPU H100 computational instrument operated by <a href="https://datascience.stanford.edu">Stanford Data Science</a>.</p>
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

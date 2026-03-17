@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conda | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/marlowe-staging/assets/images/marlowe-logo.png">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" >Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" class="active">Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="docs-page">
+  <div class="container">
+    <div class="docs-layout">
+      <nav class="docs-sidebar" aria-label="Documentation navigation">
+  <div class="docs-sidebar-header">
+    <a href="/marlowe-staging/documentation/">Documentation</a>
+  </div>
+  <ul class="docs-nav-list">
+    
+      
+        
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Getting Started</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/"
+                   >
+                  Get Access
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/connecting/"
+                   >
+                  Connecting
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/filesystems/"
+                   >
+                  Filesystems
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/globus/"
+                   >
+                  Globus
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">SLURM and Open OnDemand</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/slurm/"
+                   >
+                  SLURM on Marlowe
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/openondemand/"
+                   >
+                  Open OnDemand
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Software</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/"
+                   >
+                  Overview
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/apptainer/"
+                   >
+                  Apptainer
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/conda/"
+                   class="active">
+                  Conda
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/conan/"
+                   >
+                  Conan
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/cudnn/"
+                   >
+                  CuDNN
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/cudatoolkit/"
+                   >
+                  CUDA Toolkit
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/java/"
+                   >
+                  Java
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/nvhpc/"
+                   >
+                  Nvidia HPC SDK
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/ngc-nims/"
+                   >
+                  NGC NIMs
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Support</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/help-and-support/"
+                   >
+                  Help & Support
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/faq/"
+                   >
+                  FAQ
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/specs/"
+                   >
+                  Tech Specs
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/violations/"
+                   >
+                  Usage Violations
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+      <article class="docs-content">
+        <h1 class="docs-title">Conda</h1>
+        <p>Conda is a python package manager used by a wide variety of projects.</p>
+
+<p>Marlowe uses an optimized version of Conda called Mamba.</p>
+
+<p>To load Mamba, run the following after logging in:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load conda
+</code></pre></div></div>
+
+<p>Every conda command works with mamba. No code customization is needed.</p>
+
+<h2 id="setting-up-conda-and-pip">Setting up Conda and pip</h2>
+
+<p>Conda works for the most part straight out of the box, but if you need to <code class="language-plaintext highlighter-rouge">pip install</code> packages, you will need to follow these steps:</p>
+
+<p><strong>1)</strong> Run <code class="language-plaintext highlighter-rouge">module load conda</code></p>
+
+<p><strong>2)</strong> Run <code class="language-plaintext highlighter-rouge">mamba init</code></p>
+
+<p><strong>3)</strong> Log out of Marlowe</p>
+
+<p><strong>4)</strong> Log back in to Marlowe</p>
+
+<p>After you’ve done this, mamba will be added to your path and <code class="language-plaintext highlighter-rouge">pip install</code> will function properly.</p>
+
+<h2 id="installing-a-conda-environment-in-a-different-location">Installing a Conda environment in a different location</h2>
+
+<p>Home directories have a quota of 15GB by default. This means that even small conda environments can run into quota issues rather quickly.</p>
+
+<p>To combat this, we recommend setting up your conda environment in a separate directory. You can do this with the <code class="language-plaintext highlighter-rouge">--prefix</code> command.</p>
+
+<p>For example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create --prefix /projects/m223813/mycondadir numpy=1.21
+</code></pre></div></div>
+<p>The above will create a new conda environment in the <code class="language-plaintext highlighter-rouge">/projects/m223813/mycondadir</code> folder with numpy 1.21. Since it’s not being installed into your home directory, you don’t have to worry about the same 15GB quota as before!</p>
+
+<p>You can also use the <code class="language-plaintext highlighter-rouge">--prefix</code> argument with <code class="language-plaintext highlighter-rouge">conda env</code> and other commands.</p>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/marlowe-staging/">
+            <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Stanford's GPU-based computational instrument</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/marlowe-staging/access/">Apply for Access</a></li>
+            <li><a href="https://datascience.stanford.edu/marlowe/project-application-guide">Application Guide</a></li>
+            <li><a href="/marlowe-staging/documentation/">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://datascience.stanford.edu/marlowe/recharge">Recharge Rates</a></li>
+            <li><a href="https://doi.org/10.5281/zenodo.14538206">Cite Marlowe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-partners">
+        <img src="/marlowe-staging/assets/images/partner-logos.webp" alt="Stanford Research, Stanford Data Science, Stanford University IT Research Computing">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

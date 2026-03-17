@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marlowe Computing Spotlight: Andreas Tolias Lab | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" class="active">Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" >Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/marlowe-staging/">Overview</a>
+        <span class="sep">/</span>
+        <a href="/marlowe-staging/research/">Research Focus</a>
+        <span class="sep">/</span>
+        <span class="current">Andreas Tolias</span>
+      </nav>
+
+      <article class="research-article">
+        <h1 id="marlowe-computing-spotlight-andreas-tolias-lab">Marlowe Computing Spotlight: Andreas Tolias Lab</h1>
+
+<div class="article-meta">
+<strong>Originally published:</strong> January 20, 2026 | Stanford University IT<br />
+<strong>Featuring:</strong> Andreas Tolias, Professor of Ophthalmology and Electrical Engineering; Konstantin Willeke, AI Team Lead and Postdoctoral Scholar<br />
+<strong>Lab:</strong> <a href="https://toliaslab.org/">Tolias Lab</a><br />
+Member, <a href="https://biox.stanford.edu/">Bio-X</a> · Member, <a href="https://neuroscience.stanford.edu/">Wu Tsai Neurosciences Institute</a>
+</div>
+
+<p><img src="/marlowe-staging/assets/images/tolias-willeke.png" alt="Left: Andreas Tolias, professor of ophthalmology and electrical engineering at Stanford; Right: Konstantin Willeke, AI team lead and postdoctoral scholar of ophthalmology in the Tolias group" style="width: 100%; border-radius: 8px; margin-bottom: 0.5rem;" /></p>
+<p style="font-size: 0.82rem; color: var(--stone); font-style: italic; margin-bottom: 2rem;">Left: Andreas Tolias, professor of ophthalmology and electrical engineering at Stanford. Right: Konstantin Willeke, AI team lead and postdoctoral scholar of ophthalmology in the Tolias group.</p>
+
+<p><em>The Tolias Lab explores the interface of neuroscience and AI research.</em></p>
+
+<h2 id="in-simple-terms-how-would-you-describe-the-research-problems-you-are-trying-to-solve">In simple terms, how would you describe the research problem(s) you are trying to solve?</h2>
+
+<p>Traditionally, neuroscience has relied on hypothesis-driven approaches: researchers propose a theory about brain function and design specific experiments to test it. Our team is shifting this paradigm by building a foundation model similar in concept to the large language models (LLMs) powering modern AI.</p>
+
+<p>Our goal is to create a model that captures the fundamental principles of how biological brains process visual information. This serves a dual purpose: it acts as a powerful tool for computational neuroscience, and as a source of bio-inspired architectures for more efficient computer vision.</p>
+
+<p>The Enigma Project is developing a large-scale, multi-modal foundation model of the mouse and primate brain. We are training this model on the responses of millions of neurons to natural visual stimuli, leveraging more than 200 billion data points of neural activity data from the <a href="https://www.microns-explorer.org/">MICrONS dataset</a>.</p>
+
+<p><img src="/marlowe-staging/assets/images/enigma-scaling.png" alt="MICrONS neural reconstruction and Enigma Project scaling law curves showing test loss vs. FLOPs across model sizes and recording sessions" style="width: 100%; border-radius: 8px; margin-bottom: 0.5rem;" /></p>
+<p style="font-size: 0.82rem; color: var(--stone); font-style: italic; margin-bottom: 2rem;">Left: Neural reconstruction from the MICrONS dataset. Right: Scaling law curves for the Enigma Project, showing test loss vs. compute (FLOPs) across model sizes and subsets of recording sessions.</p>
+
+<h2 id="how-has-marlowe-benefitted-your-work">How has Marlowe benefitted your work?</h2>
+
+<p>Marlowe has allowed us to scale from initial proofs-of-concept to training multi-billion-parameter models across 128 H100 GPUs. The dedicated compute time provided by Marlowe was essential for these sustained training runs.</p>
+
+<p>Our dataset presents unique challenges compared to standard text training: we utilize neural recordings from more than 300 mice. We capture the activity of neurons in the brain alongside video and behavioral data simultaneously. Marlowe’s high-performance storage enabled us to stream these three data modalities without bottlenecks.</p>
+
+<p>We are also particularly grateful to the NVIDIA Solutions Architects embedded on campus. Zoe Ryan helped us analyze traces and optimize performance throughout development and is <a href="https://datascience.stanford.edu/events/marlowe">organizing lectures</a> through Stanford Data Science on high-performance computing.</p>
+
+<p>Her team’s support allowed throughput comparable to highly optimized language models. Our custom distributed training algorithms even set a new speed record on the nanoGPT benchmark, which is used to test the capabilities of AI coding agents.</p>
+
+<h2 id="what-advice-would-you-give-other-stanford-researchers-who-might-be-interested-in-using-marlowehpc">What advice would you give other Stanford researchers who might be interested in using Marlowe/HPC?</h2>
+
+<p>First, take full advantage of the Marlowe support team and the NVIDIA Solutions Architects on campus; their support was invaluable.</p>
+
+<p>Second, invest time in benchmarking and profiling before scaling up. We dedicated significant development time to identify every possible throughput bottleneck, such as compute, data loading, and inter-node communication.</p>
+
+<p>For our specific workload, data loading remained the primary bottleneck. Because we optimized our architecture and dataloaders prior to moving to multi-node training, we were able to scale to almost full cluster utilization when scaling up the number of nodes.</p>
+
+<p>Finally, do not underestimate the complexity of data engineering for large-scale training that involves more than language tokens. If your research involves complex or non-standard data types, plan for this engineering overhead early.</p>
+
+<h2 id="is-there-anything-else-you-discovered-about-your-experience-using-marlowe">Is there anything else you discovered about your experience using Marlowe?</h2>
+
+<p>The collaborative support structure was incredibly useful for us. We received cohesive support from Stanford Data Science, Stanford Research Computing, and NVIDIA to help us find solutions for infrastructure-level challenges and squeezing the most performance out of each GPU.</p>
+
+<p>Looking forward, we believe the community would benefit from more extensive documentation on distributed model training and performance engineering, as well as established best practices for complex multimodal data. Better integration of NVIDIA profiling tools and performance monitoring dashboards would also lower the barrier for other research groups pursuing large-scale training on Marlowe.</p>
+
+<hr />
+
+<p><em>Marlowe is managed and supported by Stanford Data Science, the Vice Provost and Dean of Research, and Stanford Research Computing.</em></p>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>Marlowe is Stanford's 248-GPU H100 computational instrument operated by <a href="https://datascience.stanford.edu">Stanford Data Science</a>.</p>
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

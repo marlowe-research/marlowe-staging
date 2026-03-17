@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frequently Asked Questions | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/marlowe-staging/assets/images/marlowe-logo.png">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" >Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" class="active">Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="docs-page">
+  <div class="container">
+    <div class="docs-layout">
+      <nav class="docs-sidebar" aria-label="Documentation navigation">
+  <div class="docs-sidebar-header">
+    <a href="/marlowe-staging/documentation/">Documentation</a>
+  </div>
+  <ul class="docs-nav-list">
+    
+      
+        
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Getting Started</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/"
+                   >
+                  Get Access
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/connecting/"
+                   >
+                  Connecting
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/filesystems/"
+                   >
+                  Filesystems
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/globus/"
+                   >
+                  Globus
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">SLURM and Open OnDemand</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/slurm/"
+                   >
+                  SLURM on Marlowe
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/openondemand/"
+                   >
+                  Open OnDemand
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Software</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/"
+                   >
+                  Overview
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/apptainer/"
+                   >
+                  Apptainer
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/conda/"
+                   >
+                  Conda
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/conan/"
+                   >
+                  Conan
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/cudnn/"
+                   >
+                  CuDNN
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/cudatoolkit/"
+                   >
+                  CUDA Toolkit
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/java/"
+                   >
+                  Java
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/nvhpc/"
+                   >
+                  Nvidia HPC SDK
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/ngc-nims/"
+                   >
+                  NGC NIMs
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Support</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/help-and-support/"
+                   >
+                  Help & Support
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/faq/"
+                   class="active">
+                  FAQ
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/specs/"
+                   >
+                  Tech Specs
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/violations/"
+                   >
+                  Usage Violations
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+      <article class="docs-content">
+        <h1 class="docs-title">Frequently Asked Questions</h1>
+        <h3 id="when-i-try-to-log-in-i-get-connection-closed-by-1716799202-port-22">When I try to log in, I get “Connection closed by 171.67.99.202 port 22”.</h3>
+
+<p>This usually means your account is not yet fully activated. Make sure you received a confirmation mail and if the problem persists beyond that, please post on the <code class="language-plaintext highlighter-rouge">marlowe-researchers</code> Slack channel.</p>
+
+<h3 id="i-receive-a-disk-quota-exceeded-error-when-writing-files-what-does-this-mean">I receive a “disk quota exceeded” error when writing files. What does this mean?</h3>
+
+<p>Each <a href="/marlowe-staging/documentation/getting-started/filesystems/">filesystem</a> on Marlowe has a user space quota. You’re most likely to run into this issue when adding files to your home directory.</p>
+
+<h3 id="i-cant-run-a-docker-container">I can’t run a docker container</h3>
+
+<p>Docker is not supported on Marlowe due to the security risks associated with it. Fortunately, <a href="/marlowe-staging/documentation/software/apptainer/">Apptainer</a> supports running docker containers natively.</p>
+
+<h3 id="where-are-the-cuda-tools">Where are the CUDA tools?</h3>
+
+<p>CUDA tools and libraries such as nvcc are available in the nvhpc module. This module is not loaded by default, so it will need to be loaded whenever you use any CUDA tools and libraries. You can always automate this by adding <code class="language-plaintext highlighter-rouge">module load nvhpc</code> to your <code class="language-plaintext highlighter-rouge">~/.bashrc</code> file.</p>
+
+<h3 id="i-cant-see-my-project-directory">I can’t see my project directory</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">/projects/</code> filesystem uses a system called <a href="https://www.kernel.org/doc/html/latest/filesystems/autofs.html">autofs</a> to dynamically mount NFS shares in <code class="language-plaintext highlighter-rouge">/projects/</code>.</p>
+
+<p>Due to this, you may not see your specific <code class="language-plaintext highlighter-rouge">/projects/</code> directory until you first access it after login. As soon as you run a command that accesses your project directory, it will show up and be accessible. A simple way to show your <code class="language-plaintext highlighter-rouge">/projects/</code> directory is to run <code class="language-plaintext highlighter-rouge">ls /projects/&lt;project ID&gt;</code>.</p>
+
+<p>Here is an example:</p>
+
+<p><img src="/marlowe-staging/assets/images/docs/filesystems.gif" alt="walkthrough of finding projects directory" /></p>
+
+<h3 id="i-see-a-requested-component-was-not-found-when-submitting-an-mpi-job">I see “A requested component was not found” when submitting an MPI job.</h3>
+
+<p>You may see a similar error to the following when your code either doesn’t detect the infiniband fabric properly, or gets confused when it detects both Ethernet and Infiniband:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--------------------------------------------------------------------------
+A requested component was not found, or was unable to be opened.  This
+means that this component is either not installed or is unable to be
+used on your system (e.g., sometimes this means that shared libraries
+that the component requires are unable to be found/loaded).  Note that
+Open MPI stopped checking at the first component that it did not find.
+
+Host:      n12
+Framework: pml
+Component: ucx
+--------------------------------------------------------------------------
+</code></pre></div></div>
+
+<p>To fix this, load the <code class="language-plaintext highlighter-rouge">gcc/64</code> module by running the following/adding to your slurm command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module load gcc/64
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">gcc/64</code> module essentially reloads the network fabric libraries and forces them to be loaded in the correct order. It is recommended to load it after <a href="/marlowe-staging/documentation/software/nvhpc/">NVHPC</a>.</p>
+
+<h3 id="my-job-keeps-stopping-after-15-minutes">My job keeps stopping after 15 minutes.</h3>
+
+<p>Any jobs in the <code class="language-plaintext highlighter-rouge">preempt</code> queue can be preempted within 15 minutes if a job in a higher priority partition (<code class="language-plaintext highlighter-rouge">batch</code> or <code class="language-plaintext highlighter-rouge">hero</code>) requests the node that the <code class="language-plaintext highlighter-rouge">preempt</code> job is running on.</p>
+
+<h2 id="ive-submitted-a-job-and-it-is-still-pending-can-i-get-some-idea-when-it-will-run">I’ve submitted a job and it is still pending. Can I get some idea when it will run?</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>squeue <span class="nt">-j</span> &lt;job_id&gt; <span class="nt">--start</span>
+</code></pre></div></div>
+
+<p>will give an upper bound on the requested time by jobs ahead of yours. Even more detail can be seen via:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scontrol show <span class="nv">jobid</span><span class="o">=</span>&lt;job_id&gt;
+</code></pre></div></div>
+
+<h3 id="i-cant-request-gpus-using-code-server-through-open-ondemand">I can’t request GPUs using Code-Server through Open OnDemand</h3>
+
+<p>Code-Server instances on Marlowe are restricted to 4 CPU cores, 12GB of memory, and 8 hours of runtime. This is to prevent users from sitting on resources without utilizing them.</p>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/marlowe-staging/">
+            <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Stanford's GPU-based computational instrument</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/marlowe-staging/access/">Apply for Access</a></li>
+            <li><a href="https://datascience.stanford.edu/marlowe/project-application-guide">Application Guide</a></li>
+            <li><a href="/marlowe-staging/documentation/">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://datascience.stanford.edu/marlowe/recharge">Recharge Rates</a></li>
+            <li><a href="https://doi.org/10.5281/zenodo.14538206">Cite Marlowe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-partners">
+        <img src="/marlowe-staging/assets/images/partner-logos.webp" alt="Stanford Research, Stanford Data Science, Stanford University IT Research Computing">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

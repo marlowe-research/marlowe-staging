@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overview | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/marlowe-staging/assets/images/marlowe-logo.png">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" class="active">Overview</a></li>
+        <li><a href="/marlowe-staging/research/" >Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" >Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Enabling Data-Driven Discovery at Scale</h1>
+      <p class="hero-subtitle">Marlowe is Stanford's first GPU-based computational instrument: 248 NVIDIA H100 GPUs powering frontier AI research across all seven schools, managed by <a href="https://datascience.stanford.edu" style="color: #93c5fd; text-decoration: none;">Stanford Data Science</a>.</p>
+      <div class="hero-actions">
+        <a href="/marlowe-staging/access/" class="btn btn-white">Apply for Access</a>
+        <a href="/marlowe-staging/research/" class="btn btn-white-outline">Explore Research</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number" data-target="248">248</span>
+        <span class="stat-label">H100 GPUs</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="31">31</span>
+        <span class="stat-label">Compute Nodes</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">180+</span>
+        <span class="stat-label">Research Groups</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="7">7</span>
+        <span class="stat-label">Schools</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">2.1M+</span>
+        <span class="stat-label">GPU-Hours Delivered</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- GPU INSTRUMENT + UPDATES FEED -->
+<section class="section">
+  <div class="container">
+    <div class="instrument-section">
+      <div>
+        <div class="section-header">
+          <h2>GPU-Based Computational Instrument</h2>
+        </div>
+        <div class="instrument-text">
+          <p>Named after Philip Marlowe, the film noir detective, Marlowe is designed to give faculty the infrastructure to train foundation models, run large-scale simulations, and pursue computational work at scales previously available only to industry.</p>
+          <p>A team of Research Data Scientists partners directly with faculty to optimize code, scale training across multiple nodes, and maximize the scientific return from every GPU-hour allocated.</p>
+          <ul>
+            <li>Partner with faculty to design and execute GPU-accelerated research</li>
+            <li>Optimize training pipelines for multi-node scaling</li>
+            <li>Integrate open science practices into computational research</li>
+            <li>Provide technical consulting on model architecture and distributed training</li>
+          </ul>
+          <p><a href="https://news.stanford.edu/stories/2024/12/stanford-welcomes-first-gpu-based-supercomputer">Read the Stanford Report feature &rarr;</a></p>
+        </div>
+      </div>
+      <div>
+        <div class="cta-compact">
+          <div>
+            <h3>New to Marlowe?</h3>
+            <p>New PIs get 5,000 free GPU-hours.</p>
+          </div>
+          <a href="/marlowe-staging/access/" class="btn btn-white">Apply for Access</a>
+        </div>
+        <div class="updates-feed">
+  <div class="feed-header">
+    <h3>Latest Updates</h3>
+    <a href="/marlowe-staging/updates/" class="see-all">View all &rarr;</a>
+  </div>
+  <div class="feed-viewport" id="feed-viewport">
+    <div class="feed-track" id="feed-track">
+      
+      
+      <a href="/marlowe-staging/updates/planned-maintenance/" class="feed-item">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 20</span>
+          <span class="feed-type type-maintenance">maintenance</span>
+        </div>
+        <span class="feed-title">Planned Maintenance Window: February 24-25</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/hackathon-series/" class="feed-item">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 15</span>
+          <span class="feed-type type-talks-seminars">talks seminars</span>
+        </div>
+        <span class="feed-title">GPU Hackathon Series Announced with Doerr School</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/seminar-series/" class="feed-item">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 10</span>
+          <span class="feed-type type-talks-seminars">talks seminars</span>
+        </div>
+        <span class="feed-title">Marlowe Seminar Series: Scaling Research with GPUs</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/yamins-hero-run/" class="feed-item">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 7</span>
+          <span class="feed-type type-research-milestone">research milestone</span>
+        </div>
+        <span class="feed-title">Milestone: 80-Billion-Parameter Brain Model Validated on Marlowe</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/cycle5-launch/" class="feed-item">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 6</span>
+          <span class="feed-type type-system-status">system status</span>
+        </div>
+        <span class="feed-title">Cycle 5 Allocations Begin</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/stanford-report/" class="feed-item">
+        <div class="feed-item-header">
+          <span class="feed-date">Dec 15</span>
+          <span class="feed-type type-press">press</span>
+        </div>
+        <span class="feed-title">Stanford Welcomes First GPU-Based Supercomputer</span>
+      </a>
+      
+      
+      <a href="/marlowe-staging/updates/planned-maintenance/" class="feed-item" aria-hidden="true">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 20</span>
+          <span class="feed-type type-maintenance">maintenance</span>
+        </div>
+        <span class="feed-title">Planned Maintenance Window: February 24-25</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/hackathon-series/" class="feed-item" aria-hidden="true">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 15</span>
+          <span class="feed-type type-talks-seminars">talks seminars</span>
+        </div>
+        <span class="feed-title">GPU Hackathon Series Announced with Doerr School</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/seminar-series/" class="feed-item" aria-hidden="true">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 10</span>
+          <span class="feed-type type-talks-seminars">talks seminars</span>
+        </div>
+        <span class="feed-title">Marlowe Seminar Series: Scaling Research with GPUs</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/yamins-hero-run/" class="feed-item" aria-hidden="true">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 7</span>
+          <span class="feed-type type-research-milestone">research milestone</span>
+        </div>
+        <span class="feed-title">Milestone: 80-Billion-Parameter Brain Model Validated on Marlowe</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/cycle5-launch/" class="feed-item" aria-hidden="true">
+        <div class="feed-item-header">
+          <span class="feed-date">Feb 6</span>
+          <span class="feed-type type-system-status">system status</span>
+        </div>
+        <span class="feed-title">Cycle 5 Allocations Begin</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/stanford-report/" class="feed-item" aria-hidden="true">
+        <div class="feed-item-header">
+          <span class="feed-date">Dec 15</span>
+          <span class="feed-type type-press">press</span>
+        </div>
+        <span class="feed-title">Stanford Welcomes First GPU-Based Supercomputer</span>
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var track = document.getElementById('feed-track');
+  var viewport = document.getElementById('feed-viewport');
+  if (!track || !viewport) return;
+  var paused = false;
+  viewport.addEventListener('mouseenter', function() {
+    paused = true;
+    track.style.transform = 'none';
+  });
+  viewport.addEventListener('mouseleave', function() {
+    paused = false;
+    pos = 0;
+  });
+  var pos = 0;
+  var speed = 0.4;
+  var halfHeight = 0;
+
+  function measure() {
+    // Measure height of the first set of items (half the track)
+    var items = track.querySelectorAll('.feed-item:not([aria-hidden])');
+    var h = 0;
+    for (var i = 0; i < items.length; i++) {
+      h += items[i].offsetHeight;
+    }
+    halfHeight = h;
+  }
+
+  // Measure after fonts/layout settle
+  setTimeout(function() {
+    measure();
+    if (halfHeight <= 0) return;
+    function animate() {
+      if (!paused) {
+        pos -= speed;
+        if (Math.abs(pos) >= halfHeight) pos = 0;
+        track.style.transform = 'translateY(' + pos + 'px)';
+      }
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+  }, 200);
+})();
+</script>
+
+      </div>
+    </div>
+    <!-- Quick Links — full width below both columns -->
+    <div class="quick-links-grid" style="margin-top: 2.5rem;">
+      <a href="/marlowe-staging/access/" class="quick-link-card">
+        <div class="ql-icon">&#9889;</div>
+        <h4>Apply for Access</h4>
+        <p>5,000 free GPU-hours for new PIs. Get started with your first allocation!</p>
+      </a>
+      <a href="/marlowe-staging/about/" class="quick-link-card">
+        <div class="ql-icon">&#9881;</div>
+        <h4>Technical Specs</h4>
+        <p>248 H100 GPUs, InfiniBand NDR, 2.5 PB storage.</p>
+      </a>
+      <a href="/marlowe-staging/documentation/" class="quick-link-card">
+        <div class="ql-icon">&#128214;</div>
+        <h4>Documentation</h4>
+        <p>Getting started, multi-node training, Slurm scheduling.</p>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESEARCH SHOWCASE -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Research Spotlights</h2>
+      <a href="/marlowe-staging/research/" class="see-all">View all spotlights &rarr;</a>
+    </div>
+    <p style="color: var(--cool-grey); margin-top: -1rem; margin-bottom: 2rem;">Faculty from across Stanford are using Marlowe to train foundation models, perform computations and simulations at scales previously available only to industry.</p>
+    <div class="researcher-grid">
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>DY</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Dan Yamins</h3>
+        <p class="card-title">Associate Professor of Psychology and Computer Science</p>
+        <p class="card-school">School of Humanities & Sciences</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://neuroailab.stanford.edu/">NeuroAILab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/daniel-yamins">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">Counterfactual World Modeling: Training Brain-Scale Neural Networks</h4>
+    <p class="card-summary">Training an 80-billion-parameter brain-inspired neural network to study how biological neural circuits give rise to cognitive function. The model learns to predict how the world changes in response to actions, a core building block of biological intelligence.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Computational Neuroscience / AI</span>
+    </div>
+    
+      <a href="/marlowe-staging/research/yamins/" class="card-link">Read full story &rarr;</a>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>AT</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Andreas Tolias</h3>
+        <p class="card-title">Professor of Ophthalmology and of Electrical Engineering</p>
+        <p class="card-school">School of Medicine</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://toliaslab.org/">Tolias Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/andreas-tolias">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">The Enigma Project: Building a Foundation Model of the Brain</h4>
+    <p class="card-summary">Training large multimodal transformers on time-resolved neural recordings, visual stimulation, and behavioral data to build a foundation model of the primate brain, decoding how the brain processes and integrates information across sensory modalities.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Neuroscience / AI</span>
+    </div>
+    
+      <a href="/marlowe-staging/research/tolias/" class="card-link">Read full story &rarr;</a>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>JL</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Jure Leskovec</h3>
+        <p class="card-title">Professor of Computer Science</p>
+        <p class="card-school">School of Engineering</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://snap.stanford.edu/">SNAP Group / Stanford AI Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/jure-leskovec">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">AI Virtual Cell: Genomic Foundation Models at Frontier Scale</h4>
+    <p class="card-summary">Building the molecular scale of the AI Virtual Cell with novel foundation models for genomic sequences (DNA, RNA, proteins) scaling from 770M to 15B parameters. The goal is open-source models comparable to ESM-3 and EVO-2, trained at frontier LLM scale.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Computational Biology / Genomics</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>RL</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Ruijiang Li</h3>
+        <p class="card-title">Associate Professor of Radiation Oncology</p>
+        <p class="card-school">School of Medicine</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://med.stanford.edu/lilab.html">Li Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/ruijiang-li">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">Multimodal AI Foundation Models for Cancer Biology and Personalized Oncology</h4>
+    <p class="card-summary">Building multimodal foundation models integrating histopathology images, clinical notes, and spatial transcriptomics to transform cancer diagnosis and treatment. Published in Nature (January 2025), with training on over 400 million medical images and billions of text tokens.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Medical AI / Oncology</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/marlowe-staging/research/" class="btn btn-primary">View All Research Groups</a>
+    </div>
+  </div>
+</section>
+
+<!-- IN THE PRESS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>In the Press</h2>
+    </div>
+    <div class="callout">
+      <p><a href="https://news.stanford.edu/stories/2025/02/coda-marks-new-era-for-computing-and-data-science-at-stanford"><strong>CoDa marks new era for computing and data science at Stanford</strong></a> (Stanford Report, February 2025)</p>
+    </div>
+    <div class="callout">
+      <p><a href="https://news.stanford.edu/stories/2024/12/stanford-welcomes-first-gpu-based-supercomputer"><strong>Stanford welcomes first GPU-based supercomputer</strong></a> (Stanford Report, December 2024)</p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/marlowe-staging/">
+            <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Stanford's GPU-based computational instrument</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/marlowe-staging/access/">Apply for Access</a></li>
+            <li><a href="https://datascience.stanford.edu/marlowe/project-application-guide">Application Guide</a></li>
+            <li><a href="/marlowe-staging/documentation/">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://datascience.stanford.edu/marlowe/recharge">Recharge Rates</a></li>
+            <li><a href="https://doi.org/10.5281/zenodo.14538206">Cite Marlowe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-partners">
+        <img src="/marlowe-staging/assets/images/partner-logos.webp" alt="Stanford Research, Stanford Data Science, Stanford University IT Research Computing">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

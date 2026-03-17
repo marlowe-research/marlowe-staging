@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Updates | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/marlowe-staging/assets/images/marlowe-logo.png">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" >Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" class="active">Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" >Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="container">
+  <div class="page-header">
+    <h1>Updates</h1>
+    <p class="lead">News, milestones, and system updates from the Marlowe team.</p>
+  </div>
+
+  <ul class="updates-list">
+    
+    
+    <li class="update-item">
+      <div class="update-date-col">Feb 20, 2026</div>
+      <div class="update-content">
+        <span class="update-type-badge type-maintenance">maintenance</span>
+        <h3><a href="/marlowe-staging/updates/planned-maintenance/">Planned Maintenance Window: February 24-25</a></h3>
+        <p class="update-excerpt">Marlowe will undergo scheduled maintenance on February 24-25 for firmware updates and network fabric optimization. The maintenance window is expected to last approximately 8 hours. Running jobs will be checkpointed where possible, and the scheduling queue will drain starting February...</p>
+      </div>
+    </li>
+    
+    <li class="update-item">
+      <div class="update-date-col">Feb 15, 2026</div>
+      <div class="update-content">
+        <span class="update-type-badge type-talks-seminars">talks seminars</span>
+        <h3><a href="/marlowe-staging/updates/hackathon-series/">GPU Hackathon Series Announced with Doerr School</a></h3>
+        <p class="update-excerpt">In partnership with the Doerr School of Sustainability, Marlowe is launching a GPU hackathon series designed to help research groups go from zero to multi-node training. The hands-on workshops will provide dedicated Marlowe time, expert guidance from Research Data Scientists,...</p>
+      </div>
+    </li>
+    
+    <li class="update-item">
+      <div class="update-date-col">Feb 10, 2026</div>
+      <div class="update-content">
+        <span class="update-type-badge type-talks-seminars">talks seminars</span>
+        <h3><a href="/marlowe-staging/updates/seminar-series/">Marlowe Seminar Series: Scaling Research with GPUs</a></h3>
+        <p class="update-excerpt">The Marlowe team hosted the first event in a new seminar series focused on GPU-accelerated research at Stanford. Presentations covered multi-node training best practices, InfiniBand optimization, and case studies from Cycle 4 researchers who scaled their workflows from single-GPU to...</p>
+      </div>
+    </li>
+    
+    <li class="update-item">
+      <div class="update-date-col">Feb 7, 2026</div>
+      <div class="update-content">
+        <span class="update-type-badge type-research-milestone">research milestone</span>
+        <h3><a href="/marlowe-staging/updates/yamins-hero-run/">Milestone: 80-Billion-Parameter Brain Model Validated on Marlowe</a></h3>
+        <p class="update-excerpt">Professor Dan Yamins’ team completed a proof-of-concept hero run on Marlowe, validating that an 80-billion-parameter brain-inspired neural network can train at scale across 24 nodes (192 H100 GPUs). The 24-hour run achieved 45% model FLOPS utilization (MFU), confirming that capability-scale...</p>
+      </div>
+    </li>
+    
+    <li class="update-item">
+      <div class="update-date-col">Feb 6, 2026</div>
+      <div class="update-content">
+        <span class="update-type-badge type-system-status">system status</span>
+        <h3><a href="/marlowe-staging/updates/cycle5-launch/">Cycle 5 Allocations Begin</a></h3>
+        <p class="update-excerpt">Marlowe’s fifth allocation cycle has officially launched, with allocations awarded to research groups across seven Stanford schools. Cycle 5 represents the largest allocation round to date, with multiple groups receiving 8+ node allocations for foundation model training. New in Cycle...</p>
+      </div>
+    </li>
+    
+    <li class="update-item">
+      <div class="update-date-col">Dec 15, 2024</div>
+      <div class="update-content">
+        <span class="update-type-badge type-press">press</span>
+        <h3><a href="/marlowe-staging/updates/stanford-report/">Stanford Welcomes First GPU-Based Supercomputer</a></h3>
+        <p class="update-excerpt">Stanford Report published a feature story on Marlowe, Stanford’s first GPU-based supercomputer. The article covers Marlowe’s role in democratizing frontier AI research at the university, making capabilities previously available only to industry accessible to faculty across seven schools. Read the...</p>
+      </div>
+    </li>
+    
+  </ul>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/marlowe-staging/">
+            <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Stanford's GPU-based computational instrument</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/marlowe-staging/access/">Apply for Access</a></li>
+            <li><a href="https://datascience.stanford.edu/marlowe/project-application-guide">Application Guide</a></li>
+            <li><a href="/marlowe-staging/documentation/">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://datascience.stanford.edu/marlowe/recharge">Recharge Rates</a></li>
+            <li><a href="https://doi.org/10.5281/zenodo.14538206">Cite Marlowe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-partners">
+        <img src="/marlowe-staging/assets/images/partner-logos.webp" alt="Stanford Research, Stanford Data Science, Stanford University IT Research Computing">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLURM on Marlowe | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/marlowe-staging/assets/images/marlowe-logo.png">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" >Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" class="active">Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="docs-page">
+  <div class="container">
+    <div class="docs-layout">
+      <nav class="docs-sidebar" aria-label="Documentation navigation">
+  <div class="docs-sidebar-header">
+    <a href="/marlowe-staging/documentation/">Documentation</a>
+  </div>
+  <ul class="docs-nav-list">
+    
+      
+        
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Getting Started</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/"
+                   >
+                  Get Access
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/connecting/"
+                   >
+                  Connecting
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/filesystems/"
+                   >
+                  Filesystems
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/globus/"
+                   >
+                  Globus
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">SLURM and Open OnDemand</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/slurm/"
+                   class="active">
+                  SLURM on Marlowe
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/openondemand/"
+                   >
+                  Open OnDemand
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Software</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/"
+                   >
+                  Overview
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/apptainer/"
+                   >
+                  Apptainer
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/conda/"
+                   >
+                  Conda
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/conan/"
+                   >
+                  Conan
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/cudnn/"
+                   >
+                  CuDNN
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/cudatoolkit/"
+                   >
+                  CUDA Toolkit
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/java/"
+                   >
+                  Java
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/nvhpc/"
+                   >
+                  Nvidia HPC SDK
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/ngc-nims/"
+                   >
+                  NGC NIMs
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Support</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/help-and-support/"
+                   >
+                  Help & Support
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/faq/"
+                   >
+                  FAQ
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/specs/"
+                   >
+                  Tech Specs
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/violations/"
+                   >
+                  Usage Violations
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+      <article class="docs-content">
+        <h1 class="docs-title">SLURM on Marlowe</h1>
+        <p>Marlowe uses SLURM, a job scheduling system, to run jobs. There are three main account types: Basic/Preempt, Medium/Batch, and Large/Hero.</p>
+
+<p>The SLURM commands <code class="language-plaintext highlighter-rouge">srun</code>, <code class="language-plaintext highlighter-rouge">salloc</code>, and <code class="language-plaintext highlighter-rouge">sbatch</code> will take you far!</p>
+
+<p>Marlowe accounts start with <code class="language-plaintext highlighter-rouge">marlowe-</code> followed by the project ID. So if your project ID was <code class="language-plaintext highlighter-rouge">m223813</code>, your account would be <code class="language-plaintext highlighter-rouge">marlowe-m223813</code>. To use the batch or hero partitions, you will need to add a suffix to your account, like <code class="language-plaintext highlighter-rouge">marlowe-m223813-pm01</code>. Read more about it in the <a href="#accounts">Accounts</a> section below.</p>
+
+<p><strong>SRUN</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>srun -N 1 -G 4 -A marlowe-[Project ID] -p preempt --pty bash
+</code></pre></div></div>
+
+<p><strong>SALLOC</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>salloc -N 1 -A marlowe-[Project ID] -p preempt
+</code></pre></div></div>
+
+<p><strong>SBATCH</strong>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+
+<span class="c">#SBATCH --job-name=test</span>
+<span class="c">#SBATCH -p preempt</span>
+<span class="c">#SBATCH --nodes=1</span>
+<span class="c">#SBATCH -A marlowe-[Project ID]</span>
+<span class="c">#SBATCH -G 1</span>
+<span class="c">#SBATCH --time=00:30:00</span>
+<span class="c">#SBATCH --error=~/foo.err</span>
+
+module load slurm
+module load nvhpc
+module load cudnn/cuda12/9.3.0.75
+
+bash ~/test.sh
+</code></pre></div></div>
+
+<h2 id="check-gpu-allocation-usage">Check GPU allocation usage</h2>
+
+<p>To see a medium project’s usage, use its <code class="language-plaintext highlighter-rouge">pm</code> suffix. To see a large project’s usage, use its <code class="language-plaintext highlighter-rouge">pl</code> suffix.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sreport cluster UserUtilizationByAccount <span class="nt">-T</span> gres/gpu <span class="nv">Start</span><span class="o">=[</span>start of billing cycle] <span class="nv">End</span><span class="o">=</span>now <span class="nv">account</span><span class="o">=[</span>your project account] <span class="nt">-t</span> hours
+</code></pre></div></div>
+
+<h2 id="accounts">Accounts</h2>
+
+<p>Each allocation is given a project ID. This project ID corresponds to a job account on Marlowe.</p>
+
+<p>One of the requirements (for accounting purposes) is for each job to be credited to a job account. If you don’t add a valid account, you will see the following error message when submitting jobs:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>srun: error: ACCOUNT ERROR: Did you remember to set your account?
+</code></pre></div></div>
+
+<p>Medium and large projects are given a GPU hours allocation, tied to a suffix on the main project ID. The suffix is required when using the batch/medium and hero/large partitions. Users can keep track of their allocation using the sreport command above.</p>
+
+<p>The suffix will be something like <strong>pm</strong>01 for a medium project, or <strong>pl</strong>01 for a large project. Check your Marlowe welcome email if you need your project’s suffix.</p>
+
+<div class="docs-callout docs-callout-note">
+<strong>Note</strong>
+<p>You will be charged against your GPU hours allocation if you submit a job with a medium/large project suffix to the preempt partition.</p>
+</div>
+
+<h2 id="available-partitions">Available Partitions</h2>
+
+<ol>
+  <li>If you have a medium project allocation, you should submit to the <strong>batch</strong> partition</li>
+  <li>If you have a large project allocation, you should submit to the <strong>hero</strong> partition</li>
+  <li>For basic access, you can only submit to the <strong>preempt</strong> partition</li>
+</ol>
+
+<h2 id="partition-limits">Partition Limits</h2>
+
+<p><strong>Hero</strong>: 25 nodes, 24 hours</p>
+
+<p><strong>Batch</strong>: 16 nodes, two days</p>
+
+<p><strong>Preempt</strong>: 8 nodes, 12 hours</p>
+
+<div class="docs-callout docs-callout-note">
+<strong>Note</strong>
+<p>Any jobs in the <code>preempt</code> queue can be preempted within 15 minutes if a job in a higher priority partition (<code>batch</code> or <code>hero</code>) requests the node that the <code>preempt</code> job is running on.</p>
+</div>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/marlowe-staging/">
+            <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Stanford's GPU-based computational instrument</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/marlowe-staging/access/">Apply for Access</a></li>
+            <li><a href="https://datascience.stanford.edu/marlowe/project-application-guide">Application Guide</a></li>
+            <li><a href="/marlowe-staging/documentation/">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://datascience.stanford.edu/marlowe/recharge">Recharge Rates</a></li>
+            <li><a href="https://doi.org/10.5281/zenodo.14538206">Cite Marlowe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-partners">
+        <img src="/marlowe-staging/assets/images/partner-logos.webp" alt="Stanford Research, Stanford Data Science, Stanford University IT Research Computing">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

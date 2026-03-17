@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Focus | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/marlowe-staging/assets/images/marlowe-logo.png">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" class="active">Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" >Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="container">
+  <div class="page-header">
+    <h1>Research Focus</h1>
+    <p class="lead">Marlowe enables frontier-scale AI research across Stanford, from 80-billion-parameter brain models to genomic foundation models to autonomous driving systems. Meet the researchers pushing the boundaries of what's possible with GPU computing.</p>
+  </div>
+</div>
+
+<section class="section section-alt" style="padding-top: 1.25rem;">
+  <div class="container">
+    <div class="researcher-grid grid-full">
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>DY</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Dan Yamins</h3>
+        <p class="card-title">Associate Professor of Psychology and Computer Science</p>
+        <p class="card-school">School of Humanities & Sciences</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://neuroailab.stanford.edu/">NeuroAILab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/daniel-yamins">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">Counterfactual World Modeling: Training Brain-Scale Neural Networks</h4>
+    <p class="card-summary">Training an 80-billion-parameter brain-inspired neural network to study how biological neural circuits give rise to cognitive function. The model learns to predict how the world changes in response to actions, a core building block of biological intelligence.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Computational Neuroscience / AI</span>
+    </div>
+    
+      <a href="/marlowe-staging/research/yamins/" class="card-link">Read full story &rarr;</a>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>AT</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Andreas Tolias</h3>
+        <p class="card-title">Professor of Ophthalmology and of Electrical Engineering</p>
+        <p class="card-school">School of Medicine</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://toliaslab.org/">Tolias Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/andreas-tolias">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">The Enigma Project: Building a Foundation Model of the Brain</h4>
+    <p class="card-summary">Training large multimodal transformers on time-resolved neural recordings, visual stimulation, and behavioral data to build a foundation model of the primate brain, decoding how the brain processes and integrates information across sensory modalities.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Neuroscience / AI</span>
+    </div>
+    
+      <a href="/marlowe-staging/research/tolias/" class="card-link">Read full story &rarr;</a>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>JL</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Jure Leskovec</h3>
+        <p class="card-title">Professor of Computer Science</p>
+        <p class="card-school">School of Engineering</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://snap.stanford.edu/">SNAP Group / Stanford AI Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/jure-leskovec">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">AI Virtual Cell: Genomic Foundation Models at Frontier Scale</h4>
+    <p class="card-summary">Building the molecular scale of the AI Virtual Cell with novel foundation models for genomic sequences (DNA, RNA, proteins) scaling from 770M to 15B parameters. The goal is open-source models comparable to ESM-3 and EVO-2, trained at frontier LLM scale.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Computational Biology / Genomics</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>RL</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Ruijiang Li</h3>
+        <p class="card-title">Associate Professor of Radiation Oncology</p>
+        <p class="card-school">School of Medicine</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://med.stanford.edu/lilab.html">Li Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/ruijiang-li">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">Multimodal AI Foundation Models for Cancer Biology and Personalized Oncology</h4>
+    <p class="card-summary">Building multimodal foundation models integrating histopathology images, clinical notes, and spatial transcriptomics to transform cancer diagnosis and treatment. Published in Nature (January 2025), with training on over 400 million medical images and billions of text tokens.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Medical AI / Oncology</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>CL</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Curtis Langlotz</h3>
+        <p class="card-title">Professor of Radiology and of Biomedical Data Science</p>
+        <p class="card-school">School of Medicine</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://aimi.stanford.edu/">AIMI Center (Director)</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/curtis-langlotz">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">AI for Radiology: Large-Scale Medical Imaging Models</h4>
+    <p class="card-summary">Developing AI systems that interpret medical images and clinical text to improve diagnostic accuracy and clinical decision-making. Professor Langlotz directs the Center for Artificial Intelligence in Medicine and Imaging (AIMI) at Stanford, one of the leading medical AI research programs in the world.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Medical AI / Radiology</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>GW</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Gordon Wetzstein</h3>
+        <p class="card-title">Associate Professor of Electrical Engineering</p>
+        <p class="card-school">School of Engineering</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://www.computationalimaging.org/">Stanford Computational Imaging Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/gordon-wetzstein">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">Video World Models for Real-Time Scene Synthesis and Autonomous Driving</h4>
+    <p class="card-summary">Building scalable video world models that generate photorealistic novel views of dynamic scenes in real time by fine-tuning 1.3B-parameter video diffusion models conditioned on sparse 3D geometry from LiDAR, with publications at SIGGRAPH 2024 and CVPR 2025.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Computer Vision / Generative AI / Autonomous Systems</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>BH</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Brian Hie</h3>
+        <p class="card-title">Assistant Professor of Chemical Engineering</p>
+        <p class="card-school">School of Engineering</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://brianhie.com/">Laboratory of Evolutionary Design</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/brian-hie">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">Learning the Language of Biology: Protein and DNA Language Models</h4>
+    <p class="card-summary">Training language models on DNA and protein sequences at multi-node scale — successfully scaled to 128 H100 GPUs with 50% model FLOPS utilization. Marlowe enables large-scale biological AI training that drives discovery in protein engineering and genomics.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Computational Biology / Protein Engineering</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>IA</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Iro Armeni</h3>
+        <p class="card-title">Assistant Professor of Civil and Environmental Engineering</p>
+        <p class="card-school">School of Engineering</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://gradientspaces.stanford.edu/">Gradient Spaces Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/iro-armeni">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">4D Scene Understanding: AI for Dynamic Real-World Environments</h4>
+    <p class="card-summary">Developing GPU-accelerated systems for understanding how physical spaces change over time, from construction sites to indoor environments. Transformer architectures for 4D instance segmentation and monocular video reconstruction require sustained multi-GPU training exceeding 72 hours per run.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Computer Vision / 3D Scene Understanding</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>JZ</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">James Zou</h3>
+        <p class="card-title">Associate Professor of Biomedical Data Science and, by courtesy, of Computer Science and of Electrical Engineering</p>
+        <p class="card-school">School of Medicine</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://zou-group.github.io/">Zou Group</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/james-zou">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">AI Agents for Biomedical Discovery: Self-Improving LLMs with Scientific Tools</h4>
+    <p class="card-summary">Developing algorithms that enable large language models to self-improve and learn to use scientific tools like AlphaFold and biomedical databases to build deeper expertise. Fine-tuning and evaluating LLMs (7B-70B parameters) for high-impact applications in healthcare, biology, chemistry, and medicine.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Biomedical AI / Generative Agents</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>TM</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Tengyu Ma</h3>
+        <p class="card-title">Assistant Professor of Computer Science</p>
+        <p class="card-school">School of Engineering</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://ai.stanford.edu/~tengyuma/">Ma Group</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/tengyu-ma">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">LLM Reasoning at Scale: Reinforcement Learning for Theorem Proving and Parallel Chain-of-Thought</h4>
+    <p class="card-summary">Using reinforcement learning to push the frontiers of LLM mathematical reasoning — training self-play theorem provers that tackle open mathematical conjectures through multi-agent collaboration, and teaching reasoning models to parallelize their long chains of thought to dramatically reduce inference latency. Demonstrated 1.8x strong scaling across 3 Marlowe nodes. Targeting ICML 2026.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Machine Learning / Mathematical Reasoning</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>TT</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Thierry Tambe</h3>
+        <p class="card-title">Assistant Professor of Electrical Engineering and, by courtesy, of Computer Science</p>
+        <p class="card-school">School of Engineering</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://profiles.stanford.edu/thierry-tambe">Tambe Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/thierry-tambe">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">Efficient AI Computing: From Model Compression to Edge-Deployable Video Generation</h4>
+    <p class="card-summary">Developing algorithms, hardware architectures, and tools to make AI computing more energy-efficient. Flagship projects include block-wise quantization of video diffusion transformers for real-time edge video generation and 2D Gaussian splatting as compact visual encoders. Blockdialect (ICML 2025) introduces fine-grained mixed-format quantization for energy-efficient LLM inference. One of Marlowe's most active groups with 41,000+ GPU-hours across five medium project allocations.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Efficient AI / Hardware-Software Co-Design</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>JG</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Jeffrey Glenn</h3>
+        <p class="card-title">Joseph D. Grant Professor and Professor of Microbiology and Immunology</p>
+        <p class="card-school">School of Medicine</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://profiles.stanford.edu/jeffrey-glenn">Glenn Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/jeffrey-glenn">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">PiFold: Reinforcement Learning for High-Fidelity Molecular Structure Prediction</h4>
+    <p class="card-summary">Training AlphaFold3-family models with reinforcement learning and physics-based Rosetta scoring to produce physically realistic molecular structures for drug discovery. On CASP16 targets, PiFold achieves Rosetta energy of -25.3 where competing models exceed 4,000 — and improves binding affinity by 2-3 kcal/mol on protein-ligand benchmarks. Targeting Nature Machine Intelligence and ICML 2026.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">Computational Biology / Drug Discovery</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+        <div class="researcher-card">
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="card-header">
+      <div class="card-avatar">
+        <span>KG</span>
+      </div>
+      <div class="card-identity">
+        <h3 class="card-name">Kay Giesecke</h3>
+        <p class="card-title">Professor of Management Science and Engineering</p>
+        <p class="card-school">School of Engineering</p>
+      </div>
+    </div>
+    <ul class="card-affiliations">
+      
+        <li class="affil-lab"><a href="https://fintech.stanford.edu/">Stanford Advanced FinTech Lab</a></li>
+      
+      
+        <li><a href="https://profiles.stanford.edu/kay-giesecke">Stanford Profile</a></li>
+      
+    </ul>
+    <h4 class="card-project">Time Machine: Time-Aware Pretrained LLMs for Finance and Economics</h4>
+    <p class="card-summary">Pioneering time-aware LLMs that eliminate look-ahead bias — a fundamental flaw making current models unreliable for finance, economics, and policy analysis. Training from 7B to 14B parameter models on trillions of time-ordered tokens with novel temporal architectures. Aims to create the "ImageNet of finance" with open-source benchmarks and models. Marlowe's largest allocation request at 70,000 GPU-hours.
+</p>
+    <div class="card-tags">
+      <span class="tag tag-domain">AI for Finance / Time-Aware LLMs</span>
+    </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <div class="cta-banner" style="margin-top: 3rem;">
+      <div>
+        <h3>Interested in using Marlowe for your research?</h3>
+        <p>Principal Investigators new to Marlowe are eligible for 5,000 free GPU-hours. Get started with your first allocation!</p>
+      </div>
+      <div style="flex-shrink: 0;">
+        <a href="/marlowe-staging/access/" class="btn btn-white">Apply for Access</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/marlowe-staging/">
+            <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Stanford's GPU-based computational instrument</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/marlowe-staging/access/">Apply for Access</a></li>
+            <li><a href="https://datascience.stanford.edu/marlowe/project-application-guide">Application Guide</a></li>
+            <li><a href="/marlowe-staging/documentation/">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://datascience.stanford.edu/marlowe/recharge">Recharge Rates</a></li>
+            <li><a href="https://doi.org/10.5281/zenodo.14538206">Cite Marlowe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-partners">
+        <img src="/marlowe-staging/assets/images/partner-logos.webp" alt="Stanford Research, Stanford Data Science, Stanford University IT Research Computing">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

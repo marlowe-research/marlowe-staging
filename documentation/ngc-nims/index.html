@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Using NVIDIA NIM Containers | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/marlowe-staging/assets/images/marlowe-logo.png">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" >Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" class="active">Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="docs-page">
+  <div class="container">
+    <div class="docs-layout">
+      <nav class="docs-sidebar" aria-label="Documentation navigation">
+  <div class="docs-sidebar-header">
+    <a href="/marlowe-staging/documentation/">Documentation</a>
+  </div>
+  <ul class="docs-nav-list">
+    
+      
+        
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Getting Started</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/"
+                   >
+                  Get Access
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/connecting/"
+                   >
+                  Connecting
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/filesystems/"
+                   >
+                  Filesystems
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/getting-started/globus/"
+                   >
+                  Globus
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">SLURM and Open OnDemand</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/slurm/"
+                   >
+                  SLURM on Marlowe
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/openondemand/"
+                   >
+                  Open OnDemand
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Software</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/"
+                   >
+                  Overview
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/apptainer/"
+                   >
+                  Apptainer
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/conda/"
+                   >
+                  Conda
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/conan/"
+                   >
+                  Conan
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/cudnn/"
+                   >
+                  CuDNN
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/cudatoolkit/"
+                   >
+                  CUDA Toolkit
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/java/"
+                   >
+                  Java
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/software/nvhpc/"
+                   >
+                  Nvidia HPC SDK
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/ngc-nims/"
+                   class="active">
+                  NGC NIMs
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+      
+        <li class="docs-nav-section">
+          <span class="docs-nav-section-title">Support</span>
+          <ul>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/help-and-support/"
+                   >
+                  Help & Support
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/faq/"
+                   >
+                  FAQ
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/specs/"
+                   >
+                  Tech Specs
+                </a>
+              </li>
+            
+              <li>
+                <a href="/marlowe-staging/documentation/violations/"
+                   >
+                  Usage Violations
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    
+  </ul>
+</nav>
+
+      <article class="docs-content">
+        <h1 class="docs-title">Using NVIDIA NIM Containers</h1>
+        <p>We will assume you have set up your Apptainer cache directory as noted in the <a href="/marlowe-staging/documentation/software/apptainer/">Apptainer documentation</a>.</p>
+
+<p>We provide two examples: one using a stock <a href="https://catalog.ngc.nvidia.com/orgs/nim/teams/meta/containers/llama-3.1-8b-base">Llama 3.1 (8B) model</a> image, and another where we build a container for the <a href="https://arcinstitute.org/news/blog/evo">Evo</a> DNA foundation model.</p>
+
+<p>NVIDIA provides <a href="https://www.docker.com">Docker</a> images on the <a href="https://catalog.ngc.nvidia.com/">NGC Site</a>. Since Docker is ill-suited to an HPC environment, Marlowe uses <a href="/marlowe-staging/documentation/software/apptainer/">Apptainer</a> which works seamlessly with Docker images. However, NGC requires authentication to download images and therefore, a one-time set up is required.</p>
+
+<h2 id="one-time-setup">One-time Setup</h2>
+
+<ol>
+  <li>
+    <p>Create an NVIDIA Developer account if you haven’t already done so.</p>
+  </li>
+  <li>
+    <p>Get an API KEY for logging into NVIDIA GPU Cloud (NGC). For our example, you can obtain one by clicking on the <a href="https://build.nvidia.com/meta/llama-3_1-8b-instruct?snippet_tab=Python">Get API Key</a> at the top of the python code.</p>
+
+    <p>To avoid having to deal with this every time, you can save the username and key in your <code class="language-plaintext highlighter-rouge">~/.bash_profile</code> and ensure it is effective (or log out and back in again).</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">export </span><span class="nv">APPTAINER_DOCKER_USERNAME</span><span class="o">=</span><span class="s1">'$oauthtoken'</span>
+ <span class="nb">export </span><span class="nv">APPTAINER_DOCKER_PASSWORD</span><span class="o">=</span><span class="s2">"NGC_API_KEY"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Beware that python packages such as <code class="language-plaintext highlighter-rouge">triton</code> make use of caches, typically in home directories. Since space is limited there, you should make a symbolic link to a larger/faster directory, for example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">ln</span> <span class="nt">-s</span> /scratch/m223813/.triton_cache ~/.triton
+</code></pre></div>    </div>
+
+    <p>Same goes for other packages which use <code class="language-plaintext highlighter-rouge">~/.cache</code> for hugging face downloads. Better to make a symbolic link for that too.</p>
+  </li>
+  <li>
+    <p>Apptainer also uses a cache that can become large. So best to create a cache directory in scratch and set an environment variable to point Apptainer to it in your <code class="language-plaintext highlighter-rouge">~/.bash_profile</code>.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">export </span><span class="nv">APPTAINER_CACHEDIR</span><span class="o">=</span>/scratch/&lt;your_space&gt;/.apptainer_cache
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="llama-example">Llama Example</h2>
+
+<ol>
+  <li>
+    <p>Pull down the <code class="language-plaintext highlighter-rouge">Llama</code> image—you can search for it on the NGC website and find a copyable link for the image. Then create an apptainer image (<code class="language-plaintext highlighter-rouge">.sif</code> file) as below.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> you@login-02<span class="nv">$ </span><span class="nb">cd</span> /scratch/m223813
+ you@login-02<span class="nv">$ </span>apptainer pull docker://nvcr.io/nim/meta/llama-3.1-8b-instruct:1.3.3
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run an interactive queue on the partition provided for you. We use 8 GPUs and ask for 30 minutes in our example. Note down the node number which is typically something like <code class="language-plaintext highlighter-rouge">n01</code> or <code class="language-plaintext highlighter-rouge">n02</code> etc. We’ll assume <code class="language-plaintext highlighter-rouge">n01</code> in what follows.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> you@login-02<span class="nv">$ </span>srun <span class="nt">--partition</span><span class="o">=</span>&lt;your_partition&gt; <span class="nt">--gres</span><span class="o">=</span>gpu:8 <span class="nt">--ntasks</span><span class="o">=</span>1 <span class="nt">--time</span><span class="o">=</span>30:00 <span class="nt">--pty</span> /bin/bash
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>This Llama example runs a web service, so you need to use a tool such as <code class="language-plaintext highlighter-rouge">tmux</code> to split the screen into two, one where you will run the web service (call it <code class="language-plaintext highlighter-rouge">A</code>) and the other where you will send requests (<code class="language-plaintext highlighter-rouge">B</code>). Run the container in session <code class="language-plaintext highlighter-rouge">A</code>; this will take about 10 minutes the first time. Note the use of the API Key from step 2 which can be set up once in your <code class="language-plaintext highlighter-rouge">~/.bash_profile</code> for convenience.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">export </span><span class="nv">LOCAL_NIM_CACHE</span><span class="o">=</span><span class="nv">$SCRATCH</span>/.cache/nim
+ <span class="nb">mkdir</span> <span class="nt">-p</span> <span class="s2">"</span><span class="nv">$LOCAL_NIM_CACHE</span><span class="s2">"</span>
+ apptainer run <span class="nt">--nv</span> <span class="se">\</span>
+   <span class="nt">--bind</span> <span class="s2">"</span><span class="nv">$LOCAL_NIM_CACHE</span><span class="s2">:/opt/nim/.cache"</span> <span class="se">\</span>
+   <span class="nt">--env</span> <span class="nv">NGC_API_KEY</span><span class="o">=</span><span class="nv">$NGC_API_KEY</span> <span class="se">\</span>
+   llama-3.1-8b-instruct_1.3.3.sif
+</code></pre></div>    </div>
+
+    <p>Once the API service has started, you will see lines like below:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> INFO 2025-02-07 11:36:27.25 server.py:82] Started server process <span class="o">[</span>1275338]
+ INFO 2025-02-07 11:36:27.25 on.py:48] Waiting <span class="k">for </span>application startup.
+ INFO 2025-02-07 11:36:27.52 on.py:62] Application startup complete.
+ INFO 2025-02-07 11:36:27.69 server.py:214] Uvicorn running on http://0.0.0.0:8000 <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Switch to session <code class="language-plaintext highlighter-rouge">B</code> to hit the API end point. Below is the result of a test API call using <code class="language-plaintext highlighter-rouge">curl</code> on <code class="language-plaintext highlighter-rouge">n01</code> where we ask for a limerick about Marlowe:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'http://localhost:8000/v1/chat/completions'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+ <span class="nt">-d</span> <span class="s1">'{
+    "model": "meta/llama-3.1-8b-instruct",
+    "messages": [{"role":"user", "content":"Write a limerick about Marlowe GPU Cluster (31 DGXs)"}],
+    "max_tokens": 64
+    }'</span>
+</code></pre></div>    </div>
+
+    <p>The JSON output contains:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> There once was a cluster so fine,
+ Marlowe DGXs, 31 in line,
+ Processing with care,
+ Through NVIDIA GPUs fair,
+ In AI work, a speedy shrine.
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="evo-container">Evo container</h2>
+
+<p>Often, it is more convenient to create a custom container that can be used over and over to run a bunch of jobs. We demonstrate by building such a container for the <a href="https://github.com/evo-design/evo">Evo</a> model using the definition file <code class="language-plaintext highlighter-rouge">evo.def</code> below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bootstrap: docker
+From: nvcr.io/nvidia/pytorch:25.01-py3
+
+%post
+    # Update package list and install development tools
+    apt-get update &amp;&amp; apt-get install -y --no-install-recommends \
+        build-essential \
+        cmake \
+        wget \
+        git \
+        &amp;&amp; apt-get clean \
+        &amp;&amp; rm -rf /var/lib/apt/lists/*
+    # Several NVIDIA containers contain bad triton versions, which
+    # look for libcuda.so in the wrong places, so delete if installed
+    # and reinstall latest
+    pip uninstall -y triton
+    pip install triton
+    pip install evo-model
+
+%runscript
+    # Run an Evo example script
+    echo "Running Evo example"
+    git clone --depth 1 https://github.com/evo-design/evo.git
+    cd evo
+    python -m scripts.generate \
+           --model-name evo-1-131k-base \
+           --prompt ACGT \
+           --n-samples 10 \
+           --n-tokens 100 \
+           --temperature 1. \
+           --top-k 4 \
+           --device cuda:0
+</code></pre></div></div>
+
+<p>This definition file starts off using the <code class="language-plaintext highlighter-rouge">pytorch:25.01-py3</code> container from NVIDIA NGC and then <code class="language-plaintext highlighter-rouge">pip</code> installs <code class="language-plaintext highlighter-rouge">evo-model</code>. One could use other pytorch containers, but we’ve found that earlier versions of the containers (e.g. <code class="language-plaintext highlighter-rouge">pytorch:24.02-py3</code>) contain <code class="language-plaintext highlighter-rouge">triton</code> package versions that do a bad job of locating <code class="language-plaintext highlighter-rouge">libcuda.so</code>. If you use those, be sure to uninstall the <code class="language-plaintext highlighter-rouge">triton</code> package and update to the latest version. In the worst case, you may have to build it yourself.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">%runscript</code> section runs an example from the github repo and uses just one GPU device.</p>
+
+<p>Building the container image doesn’t require a GPU, so one can do the following on the login node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">APPTAINER_DOCKER_USERNAME</span><span class="o">=</span><span class="s1">'$oauthtoken'</span>
+<span class="nb">export </span><span class="nv">APPTAINER_DOCKER_PASSWORD</span><span class="o">=</span><span class="s2">"YOUR NGC API KEY"</span>
+apptainer build evo.sif evo.def
+</code></pre></div></div>
+
+<p>This will create a file <code class="language-plaintext highlighter-rouge">evo.sif</code> that can then be run on a GPU node via <code class="language-plaintext highlighter-rouge">apptainer run &lt;image.sif&gt;</code> which will simply execute the example in <code class="language-plaintext highlighter-rouge">%runscript</code> section. Or you can use an <code class="language-plaintext highlighter-rouge">sbatch</code> script.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="c">#SBATCH --job-name=run_evo</span>
+<span class="c">#SBATCH -p batch</span>
+<span class="c">#SBATCH --nodes=1</span>
+<span class="c">#SBATCH -A marlowe-m000xxx</span>
+<span class="c">#SBATCH -G 1</span>
+<span class="c">#SBATCH --time=2:00:00</span>
+<span class="c">#SBATCH --chdir=/scratch/m000xxx/</span>
+<span class="c">#SBATCH --error=/scratch/m000xxx/run_evo.err</span>
+
+<span class="nb">export </span><span class="nv">APPTAINER_DOCKER_USERNAME</span><span class="o">=</span><span class="s1">'$oauthtoken'</span>
+<span class="nb">export </span><span class="nv">APPTAINER_DOCKER_PASSWORD</span><span class="o">=</span><span class="s2">"YOUR NGC API KEY"</span>
+
+module load slurm
+
+apptainer run <span class="nt">--nv</span> <span class="nt">--bind</span> /scratch/m000xxx evo.sif
+</code></pre></div></div>
+
+<p>Here is sample output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Running test Evo script
+Generated sequences:
+Prompt: "ACGT",  Output: "AGACAAGGGCATACACCCCACCCTCAGTAAACTTCGGCCTGCCCTTGGAG...",  Score: -1.458
+Prompt: "ACGT",  Output: "CCGGTTCCTCGGCCGTCTCCTCCGGCGCCAGATCGTAGATATTGGCAACT...",  Score: -1.601
+Prompt: "ACGT",  Output: "GTTCGACGAGCCGGTGGCAGTGCAGCATCCGGCCCGCCTGGGAGACCTCC...",  Score: -1.520
+...
+</code></pre></div></div>
+
+<p>One can run something other than the code in the <code class="language-plaintext highlighter-rouge">%runscript</code> section using the line</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apptainer shell <span class="nt">--nv</span> <span class="nt">--bind</span> /scratch/m000xxx evo.sif
+</code></pre></div></div>
+
+<p>which will drop one into a shell. Or one can append a command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apptainer <span class="nb">exec</span> <span class="nt">--nv</span> <span class="nt">--bind</span> /scratch/m000xxx evo.sif python <span class="nt">-m</span> scripts.generate <span class="se">\</span>
+    <span class="nt">--model-name</span> evo-1-131k-base <span class="se">\</span>
+    <span class="nt">--prompt</span> ACGT <span class="se">\</span>
+    <span class="nt">--n-samples</span> 10 <span class="se">\</span>
+    <span class="nt">--n-tokens</span> 100 <span class="se">\</span>
+    <span class="nt">--temperature</span> 1. <span class="se">\</span>
+    <span class="nt">--top-k</span> 4 <span class="se">\</span>
+    <span class="nt">--device</span> cuda:0
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">evo.sif</code> file can be shared among your lab members or others and will help with reproducibility.</p>
+
+<p>A few things to note:</p>
+
+<ol>
+  <li>
+    <p>Tools such as <code class="language-plaintext highlighter-rouge">Evo</code> download models etc. and place them in caches, typically in the home directory, e.g. <code class="language-plaintext highlighter-rouge">~/.cache</code>. To avoid running out of disk quota, it is best to symlink the cache into the scratch area and ensure that scratch is mounted on the container. That is done via the <code class="language-plaintext highlighter-rouge">--bind</code> option above.</p>
+  </li>
+  <li>
+    <p>Apptainer itself uses a cache and once again, it is best to set a variable as indicated at the top of this document.</p>
+  </li>
+</ol>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/marlowe-staging/">
+            <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Stanford's GPU-based computational instrument</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/marlowe-staging/access/">Apply for Access</a></li>
+            <li><a href="https://datascience.stanford.edu/marlowe/project-application-guide">Application Guide</a></li>
+            <li><a href="/marlowe-staging/documentation/">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://datascience.stanford.edu/marlowe/recharge">Recharge Rates</a></li>
+            <li><a href="https://doi.org/10.5281/zenodo.14538206">Cite Marlowe</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-partners">
+        <img src="/marlowe-staging/assets/images/partner-logos.webp" alt="Stanford Research, Stanford Data Science, Stanford University IT Research Computing">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
