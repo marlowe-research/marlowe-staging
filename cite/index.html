@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Updates | Marlowe</title>
+  <title>Cite & Acknowledge Marlowe | Marlowe</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="/marlowe-staging/" >Overview</a></li>
         <li><a href="/marlowe-staging/research/" >Research Focus</a></li>
-        <li><a href="/marlowe-staging/updates/" class="active">Updates</a></li>
+        <li><a href="/marlowe-staging/updates/" >Updates</a></li>
         <li><a href="/marlowe-staging/documentation/" >Documentation</a></li>
         <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
         <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
@@ -83,68 +83,47 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
   <main id="main-content">
     <div class="container">
   <div class="page-header">
-    <h1>Updates</h1>
-    <p class="lead">News, milestones, and system updates from the Marlowe team.</p>
+    <h1>Cite &amp; Acknowledge Marlowe</h1>
+    <p class="lead">If your research used Marlowe, please include the acknowledgment below in your publications, talks, and presentations.</p>
   </div>
 
-  <ul class="updates-list">
-    
-    
-    <li class="update-item">
-      <div class="update-date-col">Feb 20, 2026</div>
-      <div class="update-content">
-        <span class="update-type-badge type-maintenance">maintenance</span>
-        <h3><a href="/marlowe-staging/updates/planned-maintenance/">Planned Maintenance Window: February 24-25</a></h3>
-        <p class="update-excerpt">Marlowe will undergo scheduled maintenance on February 24-25 for firmware updates and network fabric optimization. The maintenance window is expected to last approximately 8 hours. Running jobs will be checkpointed where possible, and the scheduling queue will drain starting February...</p>
-      </div>
-    </li>
-    
-    <li class="update-item">
-      <div class="update-date-col">Feb 15, 2026</div>
-      <div class="update-content">
-        <span class="update-type-badge type-talks-seminars">talks seminars</span>
-        <h3><a href="/marlowe-staging/updates/hackathon-series/">GPU Hackathon Series Announced with Doerr School</a></h3>
-        <p class="update-excerpt">In partnership with the Doerr School of Sustainability, Marlowe is launching a GPU hackathon series designed to help research groups go from zero to multi-node training. The hands-on workshops will provide dedicated Marlowe time, expert guidance from Research Data Scientists,...</p>
-      </div>
-    </li>
-    
-    <li class="update-item">
-      <div class="update-date-col">Feb 10, 2026</div>
-      <div class="update-content">
-        <span class="update-type-badge type-talks-seminars">talks seminars</span>
-        <h3><a href="/marlowe-staging/updates/seminar-series/">Marlowe Seminar Series: Scaling Research with GPUs</a></h3>
-        <p class="update-excerpt">The Marlowe team hosted the first event in a new seminar series focused on GPU-accelerated research at Stanford. Presentations covered multi-node training best practices, InfiniBand optimization, and case studies from Cycle 4 researchers who scaled their workflows from single-GPU to...</p>
-      </div>
-    </li>
-    
-    <li class="update-item">
-      <div class="update-date-col">Feb 7, 2026</div>
-      <div class="update-content">
-        <span class="update-type-badge type-research-milestone">research milestone</span>
-        <h3><a href="/marlowe-staging/updates/yamins-hero-run/">Milestone: 80-Billion-Parameter Brain Model Validated on Marlowe</a></h3>
-        <p class="update-excerpt">Professor Dan Yamins’ team completed a proof-of-concept hero run on Marlowe, validating that an 80-billion-parameter brain-inspired neural network can train at scale across 24 nodes (192 H100 GPUs). The 24-hour run achieved 45% model FLOPS utilization (MFU), confirming that capability-scale...</p>
-      </div>
-    </li>
-    
-    <li class="update-item">
-      <div class="update-date-col">Feb 6, 2026</div>
-      <div class="update-content">
-        <span class="update-type-badge type-system-status">system status</span>
-        <h3><a href="/marlowe-staging/updates/cycle5-launch/">Cycle 5 Allocations Begin</a></h3>
-        <p class="update-excerpt">Marlowe’s fifth allocation cycle has officially launched, with allocations awarded to research groups across seven Stanford schools. Cycle 5 represents the largest allocation round to date, with multiple groups receiving 8+ node allocations for foundation model training. New in Cycle...</p>
-      </div>
-    </li>
-    
-    <li class="update-item">
-      <div class="update-date-col">Dec 15, 2024</div>
-      <div class="update-content">
-        <span class="update-type-badge type-press">press</span>
-        <h3><a href="/marlowe-staging/updates/stanford-report/">Stanford Welcomes First GPU-Based Supercomputer</a></h3>
-        <p class="update-excerpt">Stanford Report published a feature story on Marlowe, Stanford’s first GPU-based supercomputer. The article covers Marlowe’s role in democratizing frontier AI research at the university, making capabilities previously available only to industry accessible to faculty across seven schools. Read the...</p>
-      </div>
-    </li>
-    
-  </ul>
+  <div class="article-content" style="max-width: 800px;">
+
+    <h2>Acknowledgment Text</h2>
+    <p>Copy and paste the following into your paper's acknowledgments section:</p>
+    <div class="callout" style="position: relative;">
+      <p id="ack-text" style="font-style: italic;">"This work used Marlowe (Kapfer et al., 2025), Stanford University's GPU-based Computational Instrument, supported by Stanford Data Science and Stanford Research Computing."</p>
+    </div>
+
+    <h2>Citation</h2>
+    <p>Please also cite the Marlowe instrument in your references:</p>
+    <div class="callout">
+      <p>Craig Kapfer, Kurt Stine, Balasubramanian Narasimhan, Christopher Mentzel, and Emmanuel Candes. <strong>Marlowe: Stanford's GPU-based Computational Instrument.</strong> 2025. DOI: <a href="https://doi.org/10.5281/zenodo.14751899">10.5281/zenodo.14751899</a></p>
+    </div>
+
+    <h3>BibTeX</h3>
+    <div class="callout" style="position: relative;">
+<pre style="margin: 0; white-space: pre-wrap; font-size: 0.9rem;">@misc{marlowe2025,
+  author       = {Kapfer, Craig and Stine, Kurt and Narasimhan, Balasubramanian and Mentzel, Christopher and Candes, Emmanuel},
+  title        = {Marlowe: Stanford's GPU-based Computational Instrument},
+  year         = 2025,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.14751899},
+  url          = {https://doi.org/10.5281/zenodo.14751899}
+}</pre>
+    </div>
+
+    <h2>Why Cite Marlowe?</h2>
+    <p>Citing and acknowledging Marlowe in your publications helps us:</p>
+    <ul>
+      <li>Demonstrate research impact to Stanford leadership and funding bodies</li>
+      <li>Justify continued investment in GPU computing infrastructure</li>
+      <li>Track the breadth and depth of research enabled by the instrument</li>
+      <li>Support renewal and expansion of allocations for all researchers</li>
+    </ul>
+    <p>Proper acknowledgment directly strengthens the case for sustaining and growing Marlowe as a shared resource for the Stanford research community.</p>
+
+  </div>
 </div>
 
   </main>
