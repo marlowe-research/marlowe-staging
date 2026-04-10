@@ -161,7 +161,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
     <div class="feed-track" id="feed-track">
       
       
-      <a href="/marlowe-staging/updates/planned-maintenance/" class="feed-item">
+      <a href="/marlowe-staging/updates/planned-maintenance/" class="feed-item" data-type="maintenance" data-date="2026-02-20" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 20, 2026</span>
           <span class="feed-type type-maintenance">maintenance</span>
@@ -169,7 +169,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">Planned Maintenance Window: February 24-25</span>
       </a>
       
-      <a href="/marlowe-staging/updates/hackathon-series/" class="feed-item">
+      <a href="/marlowe-staging/updates/hackathon-series/" class="feed-item" data-type="talks-seminars" data-date="2026-02-15" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 15, 2026</span>
           <span class="feed-type type-talks-seminars">talks seminars</span>
@@ -177,7 +177,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">GPU Hackathon Series Announced with Doerr School</span>
       </a>
       
-      <a href="/marlowe-staging/updates/seminar-series/" class="feed-item">
+      <a href="/marlowe-staging/updates/seminar-series/" class="feed-item" data-type="talks-seminars" data-date="2026-02-10" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 10, 2026</span>
           <span class="feed-type type-talks-seminars">talks seminars</span>
@@ -185,7 +185,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">Marlowe Seminar Series: Scaling Research with GPUs</span>
       </a>
       
-      <a href="/marlowe-staging/updates/yamins-hero-run/" class="feed-item">
+      <a href="/marlowe-staging/updates/yamins-hero-run/" class="feed-item" data-type="research-milestone" data-date="2026-02-07" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 7, 2026</span>
           <span class="feed-type type-research-milestone">research milestone</span>
@@ -193,7 +193,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">Milestone: 80-Billion-Parameter Brain Model Validated on Marlowe</span>
       </a>
       
-      <a href="/marlowe-staging/updates/cycle5-launch/" class="feed-item">
+      <a href="/marlowe-staging/updates/cycle5-launch/" class="feed-item" data-type="system-status" data-date="2026-02-06" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 6, 2026</span>
           <span class="feed-type type-system-status">system status</span>
@@ -201,7 +201,23 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">Cycle 5 Allocations Begin</span>
       </a>
       
-      <a href="/marlowe-staging/updates/stanford-report/" class="feed-item">
+      <a href="/marlowe-staging/updates/datasci211/" class="feed-item" data-type="talks-seminars" data-date="2025-09-22" data-sunset="14">
+        <div class="feed-item-header">
+          <span class="feed-date">Sep 22, 2025</span>
+          <span class="feed-type type-talks-seminars">talks seminars</span>
+        </div>
+        <span class="feed-title">DataSci 211: Accelerating Research with Marlowe</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/sds-conference/" class="feed-item" data-type="talks-seminars" data-date="2025-04-29" data-sunset="14">
+        <div class="feed-item-header">
+          <span class="feed-date">Apr 29, 2025</span>
+          <span class="feed-type type-talks-seminars">talks seminars</span>
+        </div>
+        <span class="feed-title">Marlowe Featured at 2025 Stanford Data Science Conference</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/stanford-report/" class="feed-item" data-type="press" data-date="2024-12-15" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Dec 15, 2024</span>
           <span class="feed-type type-press">press</span>
@@ -210,7 +226,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
       </a>
       
       
-      <a href="/marlowe-staging/updates/planned-maintenance/" class="feed-item" aria-hidden="true">
+      <a href="/marlowe-staging/updates/planned-maintenance/" class="feed-item" aria-hidden="true" data-type="maintenance" data-date="2026-02-20" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 20, 2026</span>
           <span class="feed-type type-maintenance">maintenance</span>
@@ -218,7 +234,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">Planned Maintenance Window: February 24-25</span>
       </a>
       
-      <a href="/marlowe-staging/updates/hackathon-series/" class="feed-item" aria-hidden="true">
+      <a href="/marlowe-staging/updates/hackathon-series/" class="feed-item" aria-hidden="true" data-type="talks-seminars" data-date="2026-02-15" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 15, 2026</span>
           <span class="feed-type type-talks-seminars">talks seminars</span>
@@ -226,7 +242,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">GPU Hackathon Series Announced with Doerr School</span>
       </a>
       
-      <a href="/marlowe-staging/updates/seminar-series/" class="feed-item" aria-hidden="true">
+      <a href="/marlowe-staging/updates/seminar-series/" class="feed-item" aria-hidden="true" data-type="talks-seminars" data-date="2026-02-10" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 10, 2026</span>
           <span class="feed-type type-talks-seminars">talks seminars</span>
@@ -234,7 +250,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">Marlowe Seminar Series: Scaling Research with GPUs</span>
       </a>
       
-      <a href="/marlowe-staging/updates/yamins-hero-run/" class="feed-item" aria-hidden="true">
+      <a href="/marlowe-staging/updates/yamins-hero-run/" class="feed-item" aria-hidden="true" data-type="research-milestone" data-date="2026-02-07" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 7, 2026</span>
           <span class="feed-type type-research-milestone">research milestone</span>
@@ -242,7 +258,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">Milestone: 80-Billion-Parameter Brain Model Validated on Marlowe</span>
       </a>
       
-      <a href="/marlowe-staging/updates/cycle5-launch/" class="feed-item" aria-hidden="true">
+      <a href="/marlowe-staging/updates/cycle5-launch/" class="feed-item" aria-hidden="true" data-type="system-status" data-date="2026-02-06" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Feb 6, 2026</span>
           <span class="feed-type type-system-status">system status</span>
@@ -250,7 +266,23 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <span class="feed-title">Cycle 5 Allocations Begin</span>
       </a>
       
-      <a href="/marlowe-staging/updates/stanford-report/" class="feed-item" aria-hidden="true">
+      <a href="/marlowe-staging/updates/datasci211/" class="feed-item" aria-hidden="true" data-type="talks-seminars" data-date="2025-09-22" data-sunset="14">
+        <div class="feed-item-header">
+          <span class="feed-date">Sep 22, 2025</span>
+          <span class="feed-type type-talks-seminars">talks seminars</span>
+        </div>
+        <span class="feed-title">DataSci 211: Accelerating Research with Marlowe</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/sds-conference/" class="feed-item" aria-hidden="true" data-type="talks-seminars" data-date="2025-04-29" data-sunset="14">
+        <div class="feed-item-header">
+          <span class="feed-date">Apr 29, 2025</span>
+          <span class="feed-type type-talks-seminars">talks seminars</span>
+        </div>
+        <span class="feed-title">Marlowe Featured at 2025 Stanford Data Science Conference</span>
+      </a>
+      
+      <a href="/marlowe-staging/updates/stanford-report/" class="feed-item" aria-hidden="true" data-type="press" data-date="2024-12-15" data-sunset="14">
         <div class="feed-item-header">
           <span class="feed-date">Dec 15, 2024</span>
           <span class="feed-type type-press">press</span>
@@ -267,6 +299,23 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
   var track = document.getElementById('feed-track');
   var viewport = document.getElementById('feed-viewport');
   if (!track || !viewport) return;
+
+  // Sunset: hide maintenance/system-status items older than their sunset_days
+  var now = new Date();
+  var items = track.querySelectorAll('.feed-item');
+  for (var i = 0; i < items.length; i++) {
+    var type = items[i].getAttribute('data-type');
+    if (type === 'maintenance' || type === 'system-status') {
+      var dateStr = items[i].getAttribute('data-date');
+      var sunsetDays = parseInt(items[i].getAttribute('data-sunset'), 10) || 14;
+      var itemDate = new Date(dateStr + 'T00:00:00');
+      var age = (now - itemDate) / (1000 * 60 * 60 * 24);
+      if (age > sunsetDays) {
+        items[i].style.display = 'none';
+      }
+    }
+  }
+
   var paused = false;
   viewport.addEventListener('mouseenter', function() {
     paused = true;
@@ -281,16 +330,14 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
   var halfHeight = 0;
 
   function measure() {
-    // Measure height of the first set of items (half the track)
-    var items = track.querySelectorAll('.feed-item:not([aria-hidden])');
+    var visible = track.querySelectorAll('.feed-item:not([aria-hidden]):not([style*="display: none"])');
     var h = 0;
-    for (var i = 0; i < items.length; i++) {
-      h += items[i].offsetHeight;
+    for (var i = 0; i < visible.length; i++) {
+      h += visible[i].offsetHeight;
     }
     halfHeight = h;
   }
 
-  // Measure after fonts/layout settle
   setTimeout(function() {
     measure();
     if (halfHeight <= 0) return;

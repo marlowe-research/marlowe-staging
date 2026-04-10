@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataSci 211: Accelerating Research with Marlowe | Marlowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/marlowe-staging/assets/images/marlowe-logo.png">
+  <link rel="stylesheet" href="/marlowe-staging/assets/css/site.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+  <div class="header-top">
+    <div class="container">
+      <a href="https://www.stanford.edu" class="stanford-link">Stanford University</a>
+    </div>
+  </div>
+  <div class="header-sds-bar">
+    <div class="container">
+      <a href="https://datascience.stanford.edu" aria-label="Stanford Data Science">
+        <img src="/marlowe-staging/assets/images/sds-logo.png" alt="Stanford Data Science" class="header-sds-logo">
+      </a>
+    </div>
+  </div>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="/marlowe-staging/" class="nav-brand">
+        <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="brand-logo">
+        <span class="brand-text">Marlowe</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/marlowe-staging/" >Overview</a></li>
+        <li><a href="/marlowe-staging/research/" >Research Focus</a></li>
+        <li><a href="/marlowe-staging/updates/" class="active">Updates</a></li>
+        <li><a href="/marlowe-staging/documentation/" >Documentation</a></li>
+        <li><a href="/marlowe-staging/access/" class="nav-cta">Apply for Access</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">&#9790;</button></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  var nav = document.getElementById('nav-links');
+  var expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+});
+
+(function() {
+  var btn = document.getElementById('theme-toggle');
+  function update() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.innerHTML = dark ? '&#9788;' : '&#9790;';
+    btn.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  update();
+  btn.addEventListener('click', function() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    update();
+  });
+})();
+</script>
+
+
+  <main id="main-content">
+    <div class="container">
+  <article class="update-article">
+    <div class="update-meta">
+      <span class="feed-type type-talks-seminars">talks seminars</span>
+      <time>September 22, 2025</time>
+    </div>
+    <h1>DataSci 211: Accelerating Research with Marlowe</h1>
+    <p>Stanford Data Science launched <strong>DATASCI 211: Accelerating Research with Marlowe — Practical GPU Computing for Scientists</strong>, a 1-unit course offered in Autumn quarter 2025.</p>
+
+<p>The course provides hands-on and conceptual grounding in high-performance GPU computing on Marlowe. Aimed at researchers from diverse disciplines, it introduces performance optimization strategies, resource scaling, and reproducibility best practices. Stanford and NVIDIA engineers lead specialized sessions on multi-GPU scaling and profiling.</p>
+
+<p><strong>Instructors:</strong> Marcelo Alvarez, Craig Kapfer, Balasubramanian Narasimhan, and Zoe Ryan.</p>
+
+<!-- TODO: Confirm exact start date for Autumn 2025. Using Sept 22 as placeholder (typical autumn quarter start). Add link to course listing if available. -->
+
+    <p style="margin-top: 2rem;"><a href="/marlowe-staging/updates/">&larr; All Updates</a></p>
+  </article>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/marlowe-staging/">
+            <img src="/marlowe-staging/assets/images/marlowe-logo.png" alt="Marlowe" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Stanford's GPU-based computational instrument</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/marlowe-staging/access/">Apply for Access</a></li>
+            <li><a href="https://datascience.stanford.edu/marlowe/project-application-guide">Application Guide</a></li>
+            <li><a href="/marlowe-staging/documentation/">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://datascience.stanford.edu/marlowe/recharge">Recharge Rates</a></li>
+            <li><a href="/marlowe-staging/cite/">Cite &amp; Acknowledge</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-partners">
+        <img src="/marlowe-staging/assets/images/partner-logos.webp" alt="Stanford Research, Stanford Data Science, Stanford University IT Research Computing">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Stanford University. Stanford, California 94305.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

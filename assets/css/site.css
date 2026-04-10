@@ -1002,6 +1002,37 @@ img { max-width: 100%; height: auto; }
 }
 
 /* ============================================================
+   UPDATE FILTERS
+   ============================================================ */
+
+.update-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--white);
+  color: var(--cool-grey);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.filter-btn:hover {
+  border-color: var(--cardinal);
+  color: var(--cardinal);
+}
+.filter-btn.active {
+  background: var(--cardinal);
+  border-color: var(--cardinal);
+  color: var(--white);
+}
+
+/* ============================================================
    CALLOUT / CTA BOXES
    ============================================================ */
 

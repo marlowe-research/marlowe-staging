@@ -87,10 +87,18 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
     <p class="lead">News, milestones, and system updates from the Marlowe team.</p>
   </div>
 
-  <ul class="updates-list">
+  <div class="update-filters" id="update-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="research-milestone">Research</button>
+    <button class="filter-btn" data-filter="press">Press</button>
+    <button class="filter-btn" data-filter="talks-seminars">Seminars &amp; Events</button>
+    <button class="filter-btn" data-filter="system-status">System Status</button>
+  </div>
+
+  <ul class="updates-list" id="updates-list">
     
     
-    <li class="update-item">
+    <li class="update-item" data-type="maintenance" data-date="2026-02-20">
       <div class="update-date-col">Feb 20, 2026</div>
       <div class="update-content">
         <span class="update-type-badge type-maintenance">maintenance</span>
@@ -99,7 +107,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
       </div>
     </li>
     
-    <li class="update-item">
+    <li class="update-item" data-type="talks-seminars" data-date="2026-02-15">
       <div class="update-date-col">Feb 15, 2026</div>
       <div class="update-content">
         <span class="update-type-badge type-talks-seminars">talks seminars</span>
@@ -108,7 +116,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
       </div>
     </li>
     
-    <li class="update-item">
+    <li class="update-item" data-type="talks-seminars" data-date="2026-02-10">
       <div class="update-date-col">Feb 10, 2026</div>
       <div class="update-content">
         <span class="update-type-badge type-talks-seminars">talks seminars</span>
@@ -117,7 +125,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
       </div>
     </li>
     
-    <li class="update-item">
+    <li class="update-item" data-type="research-milestone" data-date="2026-02-07">
       <div class="update-date-col">Feb 7, 2026</div>
       <div class="update-content">
         <span class="update-type-badge type-research-milestone">research milestone</span>
@@ -126,7 +134,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
       </div>
     </li>
     
-    <li class="update-item">
+    <li class="update-item" data-type="system-status" data-date="2026-02-06">
       <div class="update-date-col">Feb 6, 2026</div>
       <div class="update-content">
         <span class="update-type-badge type-system-status">system status</span>
@@ -135,7 +143,25 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
       </div>
     </li>
     
-    <li class="update-item">
+    <li class="update-item" data-type="talks-seminars" data-date="2025-09-22">
+      <div class="update-date-col">Sep 22, 2025</div>
+      <div class="update-content">
+        <span class="update-type-badge type-talks-seminars">talks seminars</span>
+        <h3><a href="/marlowe-staging/updates/datasci211/">DataSci 211: Accelerating Research with Marlowe</a></h3>
+        <p class="update-excerpt">Stanford Data Science launched DATASCI 211: Accelerating Research with Marlowe — Practical GPU Computing for Scientists, a 1-unit course offered in Autumn quarter 2025. The course provides hands-on and conceptual grounding in high-performance GPU computing on Marlowe. Aimed at researchers...</p>
+      </div>
+    </li>
+    
+    <li class="update-item" data-type="talks-seminars" data-date="2025-04-29">
+      <div class="update-date-col">Apr 29, 2025</div>
+      <div class="update-content">
+        <span class="update-type-badge type-talks-seminars">talks seminars</span>
+        <h3><a href="/marlowe-staging/updates/sds-conference/">Marlowe Featured at 2025 Stanford Data Science Conference</a></h3>
+        <p class="update-excerpt">Marlowe researchers presented a dedicated session at the 2025 Stanford Data Science Conference, held at the Simonyi Conference Center in CoDa on April 29, 2025. The session, Designing for Impact with Marlowe GPU-Based Computational Instrument, featured three talks showcasing research...</p>
+      </div>
+    </li>
+    
+    <li class="update-item" data-type="press" data-date="2024-12-15">
       <div class="update-date-col">Dec 15, 2024</div>
       <div class="update-content">
         <span class="update-type-badge type-press">press</span>
@@ -145,7 +171,83 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
     </li>
     
   </ul>
+
+  <p class="updates-show-maintenance" id="show-maintenance-toggle" style="display: none; margin-top: 1.5rem; font-size: 0.85rem; color: var(--cool-grey);">
+    <a href="#" id="show-maintenance-link" style="color: var(--cool-grey);">Show maintenance history</a>
+  </p>
 </div>
+
+<script>
+(function() {
+  var buttons = document.querySelectorAll('.filter-btn');
+  var items = document.querySelectorAll('.update-item');
+  var showToggle = document.getElementById('show-maintenance-toggle');
+  var showLink = document.getElementById('show-maintenance-link');
+  var maintenanceVisible = false;
+  var currentFilter = 'all';
+
+  // Types that auto-hide after 14 days
+  var transientTypes = ['maintenance'];
+
+  function isExpired(item) {
+    var type = item.getAttribute('data-type');
+    if (transientTypes.indexOf(type) === -1) return false;
+    var dateStr = item.getAttribute('data-date');
+    var itemDate = new Date(dateStr + 'T00:00:00');
+    var age = (new Date() - itemDate) / (1000 * 60 * 60 * 24);
+    return age > 14;
+  }
+
+  function hasHiddenMaintenance() {
+    for (var i = 0; i < items.length; i++) {
+      if (isExpired(items[i])) return true;
+    }
+    return false;
+  }
+
+  function applyFilter() {
+    for (var i = 0; i < items.length; i++) {
+      var type = items[i].getAttribute('data-type');
+      var matchesFilter = (currentFilter === 'all' || type === currentFilter);
+      var expired = isExpired(items[i]);
+      var hidden = !matchesFilter || (expired && !maintenanceVisible);
+      items[i].style.display = hidden ? 'none' : '';
+    }
+    // Show toggle only when there are hidden maintenance items and we're on "all" or "maintenance" isn't the active filter
+    if (hasHiddenMaintenance() && !maintenanceVisible) {
+      showToggle.style.display = '';
+    } else {
+      showToggle.style.display = 'none';
+    }
+  }
+
+  // Filter buttons
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function() {
+      for (var j = 0; j < buttons.length; j++) buttons[j].classList.remove('active');
+      this.classList.add('active');
+      currentFilter = this.getAttribute('data-filter');
+      applyFilter();
+    });
+  }
+
+  // Show maintenance toggle
+  showLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    maintenanceVisible = true;
+    showLink.textContent = 'Maintenance history shown';
+    applyFilter();
+  });
+
+  // URL param: ?show=all reveals everything
+  if (window.location.search.indexOf('show=all') !== -1) {
+    maintenanceVisible = true;
+  }
+
+  // Initial render
+  applyFilter();
+})();
+</script>
 
   </main>
 
