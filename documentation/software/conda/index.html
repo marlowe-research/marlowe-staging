@@ -295,14 +295,14 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
 
 <h2 id="installing-a-conda-environment-in-a-different-location">Installing a Conda environment in a different location</h2>
 
-<p>Home directories have a quota of 15GB by default. This means that even small conda environments can run into quota issues rather quickly.</p>
+<p>Home directories have a quota of 32GB by default. This means that even small conda environments can run into quota issues rather quickly.</p>
 
 <p>To combat this, we recommend setting up your conda environment in a separate directory. You can do this with the <code class="language-plaintext highlighter-rouge">--prefix</code> command.</p>
 
 <p>For example:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create --prefix /projects/m223813/mycondadir numpy=1.21
 </code></pre></div></div>
-<p>The above will create a new conda environment in the <code class="language-plaintext highlighter-rouge">/projects/m223813/mycondadir</code> folder with numpy 1.21. Since it’s not being installed into your home directory, you don’t have to worry about the same 15GB quota as before!</p>
+<p>The above will create a new conda environment in the <code class="language-plaintext highlighter-rouge">/projects/m223813/mycondadir</code> folder with numpy 1.21. Since it’s not being installed into your home directory, you don’t have to worry about the same 32GB quota as before!</p>
 
 <p>You can also use the <code class="language-plaintext highlighter-rouge">--prefix</code> argument with <code class="language-plaintext highlighter-rouge">conda env</code> and other commands.</p>
 
