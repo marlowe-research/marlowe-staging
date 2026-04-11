@@ -97,17 +97,16 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <div class="access-card-header">
           <span class="access-tier-label">Start Here</span>
           <h3>Basic Access</h3>
-          <div class="access-price">Free</div>
-          <p class="access-subtitle">5,000 GPU-hours per cycle (~12 weeks)</p>
+          <p class="access-subtitle">5,000 free introductory GPU-hours for new PIs</p>
         </div>
         <div class="access-card-body">
           <ul class="access-features">
-            <li>No-cost introductory allocation for new PIs</li>
-            <li>Full access to all 248 H100 GPUs</li>
+            <li>5,000 free GPU-hours for PIs new to Marlowe (one cycle)</li>
+            <li>Valid for one year</li>
+            <li>Access to Marlowe's preempt partition</li>
             <li>Research Data Scientist consulting support</li>
-            <li>Multi-node training up to 8 GPUs</li>
             <li>Access to 2.5 PB parallel filesystem</li>
-            <li>One allocation cycle (~12 weeks)</li>
+            <li>Jobs may be preempted by higher-priority work</li>
           </ul>
           <a href="https://forms.gle/PbykE5VtbuGG4Wdj7" class="btn btn-primary" style="width: 100%; text-align: center;">Apply Now</a>
           <p class="access-note">Must be completed by the faculty PI personally.</p>
@@ -119,16 +118,15 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <div class="access-card-header">
           <span class="access-tier-label">Scale Up</span>
           <h3>Medium Project</h3>
-          <div class="access-price">Recharge</div>
-          <p class="access-subtitle">Up to 50,000 GPU-hours</p>
+          <p class="access-subtitle">Up to 10,000 GPU-hours per cycle</p>
         </div>
         <div class="access-card-body">
           <ul class="access-features">
-            <li>Extended allocation beyond Basic Access</li>
-            <li>Multi-node jobs up to 64 GPUs (8 nodes)</li>
+            <li>Dedicated allocation via batch partition</li>
+            <li>Multi-node jobs up to 16 nodes (128 GPUs)</li>
+            <li>Up to 2-day wall time per job</li>
             <li>Dedicated RDS partnership for scaling</li>
-            <li>Priority scheduling within allocation</li>
-            <li>Billed at Stanford recharge rate</li>
+            <li>One allocation cycle (~12 weeks)</li>
           </ul>
           <a href="https://forms.gle/odUZ1AnzAu9TiNma6" class="btn btn-secondary" style="width: 100%; text-align: center;">Apply for Medium Project</a>
           <p class="access-note">Requires Basic Access first. See the <a href="https://datascience.stanford.edu/marlowe/project-application-guide">Project Application Guide</a>.</p>
@@ -140,16 +138,15 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
         <div class="access-card-header">
           <span class="access-tier-label">Full Scale</span>
           <h3>Large Project</h3>
-          <div class="access-price">Recharge</div>
-          <p class="access-subtitle">50,000+ GPU-hours</p>
+          <p class="access-subtitle">10,000+ GPU-hours per cycle</p>
         </div>
         <div class="access-card-body">
           <ul class="access-features">
             <li>Cluster-scale allocations for frontier research</li>
-            <li>Multi-node jobs up to 248 GPUs (full cluster)</li>
+            <li>Multi-node jobs up to 31 nodes (full cluster) via hero partition</li>
             <li>Deep RDS engagement and code optimization</li>
             <li>Scheduling coordination for large runs</li>
-            <li>Reviewed by allocation committee</li>
+            <li>One allocation cycle (~12 weeks)</li>
           </ul>
           <a href="https://forms.gle/odUZ1AnzAu9TiNma6" class="btn btn-secondary" style="width: 100%; text-align: center;">Apply for Large Project</a>
           <p class="access-note">Requires Basic Access first. See the <a href="https://datascience.stanford.edu/marlowe/project-application-guide">Project Application Guide</a>.</p>
@@ -208,7 +205,7 @@ document.querySelector('.nav-toggle').addEventListener('click', function() {
       </div>
       <div class="faq-item">
         <h4>How long does approval take?</h4>
-        <p>Basic Access applications are typically processed within a few business days. Medium and Large Projects are reviewed on a rolling basis by the allocation committee.</p>
+        <p>Basic Access applications are typically processed within a few business days. Medium and Large Projects are reviewed on a rolling basis.</p>
       </div>
       <div class="faq-item">
         <h4>What if I need help getting started?</h4>
