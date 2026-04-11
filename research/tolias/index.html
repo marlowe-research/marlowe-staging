@@ -99,7 +99,7 @@ Member, <a href="https://biox.stanford.edu/">Bio-X</a> · Member, <a href="https
 
 <p>What if we could build a foundation model of the brain, a single AI system trained on the full complexity of neural activity, visual input, and behavior? That’s the goal of the Enigma Project, led by Andreas Tolias and his team at Stanford.</p>
 
-<p>The project trains large multimodal transformers (approximately 1 billion parameters) on time-resolved experimental data: simultaneous recordings of neuronal activity, visual stimulation, and animal behavior. By learning the relationships between what an animal sees, how its neurons respond, and what it does, the model aims to become a general-purpose tool for understanding brain function.</p>
+<p>The project trains large multimodal transformers (up to 2 billion parameters) on time-resolved experimental data: simultaneous recordings of neuronal activity, visual stimulation, and animal behavior. By learning the relationships between what an animal sees, how its neurons respond, and what it does, the model aims to become a general-purpose tool for understanding brain function.</p>
 
 <p>“We’re not just building a model that fits one experiment,” the team explains. “We’re building a model that captures the fundamental computational principles of the brain across modalities and conditions.”</p>
 
@@ -107,7 +107,7 @@ Member, <a href="https://biox.stanford.edu/">Bio-X</a> · Member, <a href="https
 
 <p>Foundation models in neuroscience face the same challenge as foundation models in language and vision: they need massive compute to train. The Enigma Project’s billion-parameter transformers require multi-node GPU training with high-bandwidth communication between nodes, the kind of workload where Marlowe’s InfiniBand interconnect makes a critical difference.</p>
 
-<p>The team has submitted multiple applications across Marlowe’s Beta test and allocation cycles, progressively scaling their training from 8 to 64 GPUs as their models and datasets have grown. Their Cycle 5 allocation provides 8 nodes (64 H100 GPUs) for sustained training campaigns.</p>
+<p>The team has progressively scaled their training on Marlowe from 8 to 64 to 128 GPUs as their models and datasets have grown.</p>
 
 <h2 id="why-it-matters">Why It Matters</h2>
 
