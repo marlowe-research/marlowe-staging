@@ -427,7 +427,7 @@ img { max-width: 100%; height: auto; }
 .hero {
   background: linear-gradient(135deg, var(--cardinal) 0%, var(--cardinal-dark) 40%, #4a0a0a 100%);
   color: var(--white);
-  padding: 3rem 0;
+  padding: 2rem 0 4rem;
   position: relative;
   overflow: hidden;
 }
