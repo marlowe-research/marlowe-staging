@@ -427,7 +427,7 @@ img { max-width: 100%; height: auto; }
 .hero {
   background: linear-gradient(135deg, var(--cardinal) 0%, var(--cardinal-dark) 40%, #4a0a0a 100%);
   color: var(--white);
-  padding: 1.5rem 0 4.5rem;
+  padding: 3rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -471,7 +471,7 @@ img { max-width: 100%; height: auto; }
   font-size: 1.3rem;
   font-weight: 300;
   opacity: 0.9;
-  margin: 0 0 1.5rem;
+  margin: 0;
   line-height: 1.5;
 }
 .hero .hero-actions {
